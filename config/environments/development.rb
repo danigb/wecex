@@ -1,8 +1,20 @@
-# Settings specified here will take precedence over those in config/environment.rb
+# Settings specified here will take precedence over those in
+# config/environment.rb
 
-# In the development environment your application's code is reloaded on
-# every request.  This slows down response time but is perfect for development
-# since you don't have to restart the webserver when you make code changes.
+config.action_mailer.smtp_settings = {
+  :address        => "smtp.gmail.com",
+  :port           => 587,
+  :domain         => "wecex.calclab.com",
+  :authentication => :plain,
+  :user_name      => APP_CONFIG['email']['user'],
+  :password       => APP_CONFIG['email']['password']
+}
+
+HOST = "localhost:3000"
+
+# In the development environment your application's code is reloaded on every
+# request.  This slows down response time but is perfect for development since
+# you don't have to restart the webserver when you make code changes.
 config.cache_classes = false
 
 # Log error messages when you accidentally call methods on nil.

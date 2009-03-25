@@ -1,15 +1,44 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+# SOURCES setup users: http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/
+# setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
+default_run_options[:pty] = true
+set :application, "wecex"
+set :deploy_to, "/home/deploy/#{application}"
+set :user, "deploy"
+set :use_sudo, false
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
+set :scm, "git"
+set :repository,  "git@github.com:danigb/wecex.git"
+set :branch, "master"
+set :deploy_via, :remote_cache
+set :scm_verbose, true
+# set :git_shallow_clone, 1 #set :git_enable_submodules, 1
 
-role :app, "your app-server here"
-role :web, "your web-server here"
-role :db,  "your db-server here", :primary => true
+role :app, "toami.net"
+role :web, "toami.net"
+role :db,  "toami.net", :primary => true
+
+after "deploy:update_code", "config:copy_shared_configurations"
+
+# Configuration Tasks
+namespace :config do
+  desc "copy shared configurations to current"
+  task :copy_shared_configurations, :roles => [:app] do
+    %w[database.yml].each do |f|
+      run "ln -nsf #{shared_path}/config/#{f} #{release_path}/config/#{f}"
+    end
+  end
+end
+
+
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
+end
