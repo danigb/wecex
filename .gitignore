@@ -3,4 +3,6 @@ tmp/*
 config/database.yml
 config/wecex.yml
 nbproject
+db/*.sqlite3
+
 

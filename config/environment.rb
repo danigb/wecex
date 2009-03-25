@@ -1,14 +1,11 @@
 require 'yaml'
 
-APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/wecex.yml")
-## Be sure to restart your server when you modify this file
-
-# Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
-DO_NOT_REPLY = "donotreply@wecex.calclab.com"
 
-# Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+
+APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/wecex.yml")
+DO_NOT_REPLY = "donotreply@wecex.calclab.com"
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
