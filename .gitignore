@@ -1,0 +1,6 @@
+log/*
+tmp/*
+config/database.yml
+config/wecex.yml
+nbproject
+
