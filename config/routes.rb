@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :invoices
+
   map.resources :reports
 
   map.resources :profiles
@@ -8,12 +10,12 @@ ActionController::Routing::Routes.draw do |map|
     user.resource :confirmation
     user.resource :profile
     user.resource :report
-    #:has_one => [:password, :confirmation, :profile]
+    user.resources :invoices
   end
   map.resource :session
   map.resources :passwords
 
-  map.root :controller => 'sessions', :action => 'new'
+  map.root :controller => 'users'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

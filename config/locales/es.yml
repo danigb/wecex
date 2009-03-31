@@ -2,6 +2,15 @@
 es:
   profile: "Cuestionario"
   report: "Consumo"
+  invoices: "Facturas"
+
+  login: "Entrar"
+  email: "Email"
+  password: "Contraseña"
+  sign_in: "Entrar"
+  sign_up: "Registrarme"
+  forgot_password: "Olvidé la contraseña"
+  remember_me: "Recordarme en este equipo"
 
   session:
     close: "Salir"

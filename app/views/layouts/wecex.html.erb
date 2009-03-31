@@ -10,14 +10,21 @@
   </head>
   <body>
     <div id="page">
-      <div id="navigation">
-        <div class="sections">
-          <%= link_to t(:profile), user_profile_path(@user) %>
-          <%= link_to t(:report), user_report_path(@user) %>
+      <% if signed_in? %>
+        <div id="navigation">
+          <div class="sections">
+            <%= link_to t(:report), user_report_path(@user) %>
+            <%= link_to t(:invoices), user_invoices_path(@user) %>
+            <%= link_to t(:profile), user_profile_path(@user) %>
+          </div>
+          <div class="session">
+            <%= link_to t(:close, :scope => [:session]), session_path, :method => 'delete' %>
+          </div>
         </div>
-        <div class="session">
-          <%= link_to t(:close, :scope => [:session]) %>
-        </div>
+      <% end %>
+      <div id="head">
+        <h1>wecex</h1>
+        <p>Weces es un blah, blah, blah...</p>
       </div>
       <%= yield %>
     </div>

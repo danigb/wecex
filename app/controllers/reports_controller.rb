@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_filter :load_user, :load_report
+  before_filter :authenticate, :load_user, :load_report
 
   def show
     respond_to do |format|
