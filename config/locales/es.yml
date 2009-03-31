@@ -1,0 +1,7 @@
+
+es:
+  profile: "Cuestionario"
+  report: "Consumo"
+
+  session:
+    close: "Salir"

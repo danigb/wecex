@@ -1,0 +1,11 @@
+
+html {
+    background-color: #efefef;
+}
+
+#page {width: 960px; margin: 2em auto;
+    background-color: white;}
+
+#navigation {width: 100%; overflow: hidden; background-color: orange;}
+#navigation .sections {float: left;}
+#navigation .session {float: right;}
