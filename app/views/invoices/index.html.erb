@@ -1,10 +1,11 @@
-<h1>Listing invoices</h1>
+<h1>Facturas</h1>
+
+<p>Aquí se muestran las facturas que se han introducido, una gráfica chula y
+la posiblidad de añadir otra factura</p>
+
+<%= link_to 'Añadir los datos de una factura', new_invoice_path %>
 
 <table>
-  <tr>
-    <th>User</th>
-  </tr>
-
 <% @invoices.each do |invoice| %>
   <tr>
     <td><%=h invoice.user %></td>
@@ -15,6 +16,4 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New invoice', new_invoice_path %>

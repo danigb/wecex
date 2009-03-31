@@ -1,17 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :invoices
-
-  map.resources :reports
-
-  map.resources :profiles
 
   map.resources :users do |user|
     user.resource :password
     user.resource :confirmation
-    user.resource :profile
-    user.resource :report
-    user.resources :invoices
   end
+
+  map.resource :profile
+  map.resource :report
+  map.resources :invoices
+
   map.resource :session
   map.resources :passwords
 

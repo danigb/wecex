@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   include Clearance::App::Controllers::UsersController
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:new, :create]
 
   def index
-    redirect_to user_report_path(current_user)
+    redirect_to report_path
   end
 end

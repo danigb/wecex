@@ -13,9 +13,9 @@
       <% if signed_in? %>
         <div id="navigation">
           <div class="sections">
-            <%= link_to t(:report), user_report_path(@user) %>
-            <%= link_to t(:invoices), user_invoices_path(@user) %>
-            <%= link_to t(:profile), user_profile_path(@user) %>
+            <%= link_to t(:report), report_path %>
+            <%= link_to t(:invoices), invoices_path %>
+            <%= link_to t(:profile), profile_path %>
           </div>
           <div class="session">
             <%= link_to t(:close, :scope => [:session]), session_path, :method => 'delete' %>
