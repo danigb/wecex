@@ -1,20 +1,36 @@
-<h1>Editing profile</h1>
+<h2>Encuesta sobre el consumo energético de su edificio</h2>
 
 <% form_for(@profile) do |f| %>
   <%= f.error_messages %>
 
+  <h3>Localización de la vivienda</h3>
+  <p class="info">Indique la localidad en la que se encuentra su vivienda:</p>
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label 'Localidad' %>
+    <%= text_field_tag :localidad %>
   </p>
   <p>
-    <%= f.label :cuestionario %><br />
-    <%= f.text_area :cuestionario %>
+    <%= f.label 'Provincia' %>
+    <%= text_field_tag :localidad %>
   </p>
+
+  <h3>Información del edificio</h3>
+  <p class="info">Indique, si lo conoce, el año de construcción:</p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.label 'Año' %>
+    <%= text_field_tag :localidad %>
+  </p>
+  <p class="info">En caso contrario señale el periodo aproximado de constrcción:</p>
+
+  
+  <p class="info">Indique si se han producido reformas de los siguientes tipos:</p>
+
+  <h3>Instalaciones en el edificio</h3>
+
+
+  <p>
+    <label>&nbsp;</label>
+    <%= f.submit 'Guardar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>

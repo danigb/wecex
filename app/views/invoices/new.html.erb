@@ -1,15 +1,26 @@
-<h1>New invoice</h1>
+<h1>Introducir los datos de la factura</h1>
 
-<% form_for(@invoice) do |f| %>
-  <%= f.error_messages %>
+<p>Aquí se pueden introducir los datos de una factura. Esta entrada de datos será mucho más
+elaborada de lo que aquí se muestra, pudiendo proporcionar:</p>
+<ul>
+  <li>Entrada de manera visual</li>
+  <li>La posibilidad de elegir si se trata de Electricidad, Gas (o incluso otros recursos)</li>
+  <li>La posibilidad de elegir si se trata de un mes, de dos, de más... (de especificar el periodo)</li>
+</ul>
+<br/>
 
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', invoices_path %>
+<div class="dialog">
+  <h2>Introducir el importe de la factura</h2>
+  <% form_for(@invoice) do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :user %>
+      <%= f.text_field :user %>
+    </p>
+    <p>
+      <label>&nbsp;</label>
+      <%= f.submit 'Añadir' %>
+    </p>
+  <% end %>
+</div>
+<br/>

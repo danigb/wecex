@@ -1,6 +1,6 @@
 
 
-<div id="login">
+<div class="dialog">
   <h2><%= t(:login) %></h2>
 
   <% form_for :session, :url => session_path do |form| %>
@@ -19,7 +19,7 @@
     </p>
     <p>
       <label>&nbsp;</label>
-      <%= form.submit t(:sign_in), :disable_with => "Please wait..." %>
+      <%= form.submit t(:sign_in), :disable_with => "Un momento, por favor..." %>
     </p>
   <% end %>
 

@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20090331110305) do
     t.string   "salt",               :limit => 128
     t.string   "token",              :limit => 128
     t.datetime "token_expires_at"
-    t.boolean  "email_confirmed",                   :default => true, :null => false
+    t.boolean  "email_confirmed",                   :default => false, :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
