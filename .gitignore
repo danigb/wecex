@@ -4,5 +4,7 @@ config/database.yml
 config/wecex.yml
 nbproject
 db/*.sqlite3
+db/development.sqlite3
+
 
 
