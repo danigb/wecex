@@ -1,26 +1,34 @@
 <h1>Introducir los datos de la factura</h1>
 
-<p>Aquí se pueden introducir los datos de una factura. Esta entrada de datos será mucho más
-elaborada de lo que aquí se muestra, pudiendo proporcionar:</p>
-<ul>
-  <li>Entrada de manera visual</li>
-  <li>La posibilidad de elegir si se trata de Electricidad, Gas (o incluso otros recursos)</li>
-  <li>La posibilidad de elegir si se trata de un mes, de dos, de más... (de especificar el periodo)</li>
-</ul>
+<div class="help">
+  <p>Aquí se pueden introducir los datos de una factura. Esta entrada de datos será mucho más
+  elaborada de lo que aquí se muestra, pudiendo proporcionar:</p>
+  <ul>
+    <li>Entrada de manera visual</li>
+    <li>La posibilidad de elegir si se trata de Electricidad, Gas (o incluso otros recursos)</li>
+    <li>La posibilidad de elegir si se trata de un mes, de dos, de más... (de especificar el periodo)</li>
+  </ul>
+</div>
 <br/>
 
-<div class="dialog">
-  <h2>Introducir el importe de la factura</h2>
-  <% form_for(@invoice) do |f| %>
-    <%= f.error_messages %>
-    <p>
-      <%= f.label :user %>
-      <%= f.text_field :user %>
-    </p>
-    <p>
-      <label>&nbsp;</label>
-      <%= f.submit 'Añadir' %>
-    </p>
-  <% end %>
-</div>
+<% form_for(@invoice) do |f| %>
+  <%= f.error_messages %>
+  <h3>Introducir el importe de la factura</h3>
+  <p>
+    <%= f.label 'Tipo' %>
+    <%= f.select :service, {'Electricidad' => 'electricity', 'Gas' => 'gas'} %>
+  </p>
+  <p>
+    <%= f.label 'Periodo' %>
+    <%= f.text_field :begin_period %>
+  </p>
+  <p>
+    <%= f.label 'Importe' %>
+    <%= f.text_field :amount %><span>(en euros)</span>
+  </p>
+  <p>
+    <label>&nbsp;</label>
+    <%= f.submit 'Añadir' %>
+  </p>
+<% end %>
 <br/>

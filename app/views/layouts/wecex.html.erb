@@ -10,6 +10,10 @@
   </head>
   <body>
     <div id="page">
+      <div id="head">
+        <h1><%= link_to 'wecex', root_path %></h1>
+        <p>O cómo obtener los datos privados de la gente alegremente</p>
+      </div>
       <% if signed_in? %>
         <div id="navigation">
           <div class="sections">
@@ -22,10 +26,6 @@
           </div>
         </div>
       <% end %>
-      <div id="head">
-        <h1>wecex</h1>
-        <p>Wecex es un blah, blah, blah...</p>
-      </div>
       <div class="content">
         <%= yield %>
       </div>

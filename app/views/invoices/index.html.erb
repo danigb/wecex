@@ -1,19 +1,21 @@
 <h1>Facturas</h1>
 
-<p>Aquí se muestran las facturas que se han introducido, una gráfica chula y
-la posiblidad de añadir otra factura</p>
+<div class="help">
+  <p>Aquí se muestran las facturas que se han introducido, una gráfica chula y
+  la posiblidad de añadir otra factura</p>
+</div>
 
 <%= link_to 'Añadir los datos de una factura', new_invoice_path %>
 
 <table>
-<% @invoices.each do |invoice| %>
-  <tr>
-    <td><%=h invoice.user %></td>
-    <td><%= link_to 'Show', invoice %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-    <td><%= link_to 'Destroy', invoice, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @invoices.each do |invoice| %>
+    <tr>
+      <td><%=h invoice.user %></td>
+      <td><%= link_to 'Show', invoice %></td>
+      <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+      <td><%= link_to 'Destroy', invoice, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 
