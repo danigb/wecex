@@ -23,7 +23,10 @@ li {list-style-type: disc; margin-left: 2em;}
 .dialog h2 {margin-left: 5.3em; margin-bottom: 0.2em;}
 .dialog ul {margin: 0.5em 0 0.5em 8em}
 form p {width: 100%; overflow: hidden; margin-bottom: 0.2em;}
-form p.info {margin: 0.4em 0 0.2em 8em; color: gray;}
+form p.info {margin: 1em 0 0.5em 8em; color: gray;}
 form label {float: left; display: block; width: 7.5em; text-align: right; padding-top: 0.2em;
     margin-right: 0.5em; color: gray;}
+form span {margin-left: 1em;}
 
+form table {margin: 1em 0 2em 8em;}
+form table td {padding: 0.2em 1em; text-align: center;}

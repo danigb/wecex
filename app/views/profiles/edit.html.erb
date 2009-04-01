@@ -18,14 +18,33 @@
   <p class="info">Indique, si lo conoce, el año de construcción:</p>
   <p>
     <%= f.label 'Año' %>
-    <%= text_field_tag :localidad %>
+    <%= text_field_tag :build_year %>
   </p>
   <p class="info">En caso contrario señale el periodo aproximado de constrcción:</p>
-
+  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Anterior a 1950</span></p>
+  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1951 y 1960</span></p>
+  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1961 y 1971</span></p>
+  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1971 y 1981</span></p>
+  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Posterior a 1981</span></p>
   
   <p class="info">Indique si se han producido reformas de los siguientes tipos:</p>
+  <p><label>&nbsp;</label><%= check_box_tag :reformas, '' %><span>Mejora en el aislamiento del tejado</span></p>
+  <p><label>&nbsp;</label><%= check_box_tag :reformas, '' %><span>Mejora en el aislamiento de las paredes</span></p>
+  <p><label>&nbsp;</label><%= check_box_tag :reformas, '' %><span>Instalación de toldos o elementos de sombra</span></p>
 
   <h3>Instalaciones en el edificio</h3>
+  <p class="info">Señale las fuentes de energía utilizadas en su vivienda<br/>
+  (puede señalar varias fuentes de energía para una misma instalación):</p>
+  <table>
+    <tr><td></td><td>Calefacción</td><td>Aire acondicionado</td><td>Agua caliente</td></tr>
+    <tr><td>Electricidad</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Gas natural</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Gasóleo C</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Butano/propano</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Energía solar</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Madera</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+    <tr><td>Otros</td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td><td><%= check_box_tag :energy %></td></tr>
+  </table>
 
 
   <p>
