@@ -1,6 +1,12 @@
+<h1>Darse de alta</h1>
+
+<div class="help">
+  <p>En esta página se pueden dar de alta los usuarios.</p>
+</div>
+
 
 <div class="dialog">
-  <h2>Registrarse en Wecex</h2>
+  <h2>Datos de usuario</h2>
   <p class="info">Una vez creado recibirás un email para confirmar tu cuenta</p>
   <% form_for @user do |form| %>
     <%= render :partial => '/users/form', :object => form %>

@@ -14,8 +14,8 @@
         <h1><%= link_to 'wecex', root_path %></h1>
         <p>O cómo obtener los datos privados de la gente alegremente</p>
       </div>
-      <% if signed_in? %>
-        <div id="navigation">
+      <div id="navigation">
+        <% if signed_in? %>
           <div class="sections">
             <%= link_to t(:report), report_path %>
             <%= link_to t(:invoices), invoices_path %>
@@ -24,8 +24,18 @@
           <div class="session">
             <%= link_to t(:close, :scope => [:session]), session_path, :method => 'delete' %>
           </div>
-        </div>
-      <% end %>
+        <% else -%>
+          <div class="sections">
+            <%= link_to 'Qué es wecex', about_path %>
+            <%= link_to 'Quiénes somos', who_path %>
+            <%= link_to 'Para qué sirve', mission_path %>
+          </div>
+          <div class="session">
+            <%= link_to 'Entrar', new_session_path %>
+            <%= link_to 'Darse de alta', new_user_path %>
+          </div>
+        <% end %>
+      </div>
       <div class="content">
         <%= yield %>
       </div>

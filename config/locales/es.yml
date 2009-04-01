@@ -4,7 +4,7 @@ es:
   report: "Consumo"
   invoices: "Facturas"
 
-  login: "Entrar"
+  login: "Identificarse"
   email: "Email"
   password: "Contraseña"
   sign_in: "Entrar"

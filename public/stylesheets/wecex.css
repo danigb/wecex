@@ -27,7 +27,7 @@ p {margin: 0.4em 0;}
 #navigation {width: 100%; overflow: hidden; margin-top: 1em; padding: 0.2em 0em;
     border-top: 1px solid gray; border-bottom: 1px solid gray;}
 #navigation .sections {float: left;}
-#navigation  a {padding: 0 1em; font-variant: small-caps;}
+#navigation  a {padding: 0 0.5em; font-variant: small-caps;}
 #navigation .session {float: right; }
 .content {padding: 1em 2em;}
 
