@@ -64,7 +64,7 @@ module Clearance
           end
 
           def url_after_destroy
-            new_session_url
+            root_path
           end
         end
 

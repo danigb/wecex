@@ -40,7 +40,7 @@ p {margin: 0.4em 0;}
 
 #navigation {margin-top: 1em;}
 #navigation .sections {float: left; }
-#navigation  a, #navigation span {padding: 3em 0.5em 2em 0.5em; font-variant: small-caps;}
+#navigation  a, #navigation span {padding: 2em 0.5em 1.5em 0.5em; font-variant: small-caps;}
 #navigation span {color: white;}
 #navigation a:hover {background-color: #efefef;}
 

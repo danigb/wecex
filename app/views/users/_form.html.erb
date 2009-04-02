@@ -1,15 +1,15 @@
 <%= form.error_messages %>
 <p>
-  <%= form.label :email %>
+  <%= form.label :email, 'Email' %>
   <%= form.text_field :email %>
 </p>
 <p>
-  <%= form.label :password %>
+  <%= form.label :password, 'Contraseña' %>
   <%= form.password_field :password %>
 </p>
 
 <p>
-  <%= form.label :password_confirmation, "Confirm password" %>
+  <%= form.label :password_confirmation, "Repite la contraseña" %>
   <%= form.password_field :password_confirmation %>
 </p>
   
