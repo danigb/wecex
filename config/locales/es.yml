@@ -1,8 +1,8 @@
 
 es:
-  profile: "Encuesta"
-  report: "Consumo"
-  invoices: "Facturas"
+  profile: "Paso 1: Encuesta"
+  report: "Paso 3: Consumo"
+  invoices: "Paso 2: Facturas"
 
   login: "Identificarse"
   email: "Email"

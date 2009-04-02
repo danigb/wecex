@@ -60,7 +60,7 @@ module Clearance
           end
 
           def url_after_create
-            root_url
+            profile_path
           end
 
           def url_after_destroy

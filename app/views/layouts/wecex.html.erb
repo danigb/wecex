@@ -9,36 +9,44 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
   </head>
   <body>
+    <div class="top <%= @controller.class %>" ></div>
     <div id="page">
       <div id="head">
-        <h1><%= link_to 'wecex', root_path %></h1>
-        <p>O cómo obtener los datos privados de la gente alegremente</p>
-      </div>
-      <div id="navigation">
-        <% if signed_in? %>
+        <div id="logo">
+          <h1><%= link_to 'wecex', root_path %></h1>
+          <p>Mejorar el consumo energético</p>
+        </div>
+
+        <div id="navigation">
           <div class="sections">
-            <%= link_to t(:report), report_path %>
-            <%= link_to t(:invoices), invoices_path %>
-            <%= link_to t(:profile), profile_path %>
+            <% if signed_in? %>
+              <%= section t(:profile), edit_profile_path %>
+              <%= section t(:invoices), invoices_path %>
+              <%= section t(:report), report_path, :class => 'report' %>
+
+            <% else -%>
+              <%= section 'Qué es wecex', about_path %>
+              <%= section 'Quiénes somos', who_path %>
+              <%= section 'Para qué sirve', mission_path %>
+            <% end %>
           </div>
-          <div class="session">
+        </div>
+        <div class="session">
+          <% if signed_in? %>
+            Hola <%= current_user.email %>.
             <%= link_to t(:close, :scope => [:session]), session_path, :method => 'delete' %>
-          </div>
-        <% else -%>
-          <div class="sections">
-            <%= link_to 'Qué es wecex', about_path %>
-            <%= link_to 'Quiénes somos', who_path %>
-            <%= link_to 'Para qué sirve', mission_path %>
-          </div>
-          <div class="session">
+          <% else -%>
             <%= link_to 'Entrar', new_session_path %>
             <%= link_to 'Darse de alta', new_user_path %>
-          </div>
-        <% end %>
+          <% end -%>
+        </div>
+
       </div>
       <div class="content">
         <%= yield %>
       </div>
+      <div class="bottom">Esto es sólo un prototipo con el propósito de mostrar cómo podría ser wecex.
+      La estructura y el aspecto variarán en la versión final.</div>
     </div>
   </body>
 </html>

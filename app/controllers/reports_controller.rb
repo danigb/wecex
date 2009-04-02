@@ -31,4 +31,5 @@ class ReportsController < ApplicationController
     end
     @report = @user.report
   end
+
 end

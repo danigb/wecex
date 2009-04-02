@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   layout 'wecex'
 
+  
   private
   def load_user
     @user = current_user

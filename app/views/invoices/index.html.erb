@@ -1,21 +1,24 @@
 <h1>Facturas</h1>
 
 <div class="help">
-  <p>Aquí se muestran las facturas que se han introducido, una gráfica chula y
-  la posiblidad de añadir otra factura</p>
+  <p>Aquí se muestran las facturas que se han introducido con posibles representaciones visuales y
+  un enlace para añadir los datos de una factura.</p>
 </div>
 
-<%= link_to 'Añadir los datos de una factura', new_invoice_path %>
-
-<table>
-  <% @invoices.each do |invoice| %>
-    <tr>
-      <td><%=h invoice.user %></td>
-      <td><%= link_to 'Show', invoice %></td>
-      <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-      <td><%= link_to 'Destroy', invoice, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<%= link_to 'Añadir los datos de una factura', new_invoice_path %><br/>
+<br/><br/>
 
 
+
+<h2>Estadísticas</h2>
+
+<div class="help">
+  <p>En las estadísticas se muestran gráficamente la evolución del consumo en el tiempo.
+  A continuación se muestran algunos ejemplos de cómo se podrían representar visualmente esos datos</p>
+</div>
+
+<img alt="ejemplo1" src="http://chart.apis.google.com/chart?cht=lc&amp;chd=s:cEAELFJHHHKUju9uuXUc&amp;chco=76A4FB&amp;chls=2.0&amp;chs=300x200&amp;chxt=x,y,r,x&amp;chxr=1,0,4&amp;chxl=3:|Ene|Feb|Mar|2:|min|media|máx&amp;chxs=2,0000dd,13,-1,t,FF0000&amp;chxp=2,10,35,95&amp;chxtc=1,10|2,-180"/>
+<img alt="ejemplo2" src="http://chart.apis.google.com/chart?chxt=x,y,r,x&amp;chxl=0:|Enero|Julio|Enero|Julio|Enero|2:|A|B|C|3:|2005||2006||2007&amp;cht=bvs&amp;chd=s:c9uDc&amp;chco=76A4FB&amp;chls=2.0&amp;chs=300x200&amp;chbh=r,0.3"/>
+
+<img alt="ejemplo3" src="http://chart.apis.google.com/chart?cht=p3&amp;chs=300x150&amp;chd=s:Hellob&amp;chl=May|Jun|Jul|Ago|Sept|Oct"/>
+<img alt="ejemplo4" src="http://chart.apis.google.com/chart?chs=300x150&amp;cht=gom&amp;chd=t:70&amp;chl=Tu media"/>

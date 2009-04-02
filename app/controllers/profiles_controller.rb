@@ -33,4 +33,5 @@ class ProfilesController < ApplicationController
     end
     @profile = @user.profile
   end
+
 end

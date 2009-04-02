@@ -1,12 +1,19 @@
 
 html {
-    background-color: white;
+    background-color: #efefef;
     color: black;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-h1, h2, h3 {font-family: serif;}
+.AboutController {background-color: #A5C941;}
+.InvoicesController {background-color: #2DAEBF;}
+.ReportsController {background-color: #A9014B;}
+.ProfilesController {background-color: #FC9200;}
+.SessionsController {background-color: #0c0; }
+.UsersController {background-color: #0c0; }
 
+
+h1, h2, h3 {color: #333333;}
 h1 {font-size: 250%;}
 h2 {font-size: 150%;}
 h3 {font-size: 125%; border-bottom: 1px solid #efefef; margin: 1em 0 1em 0;}
@@ -17,18 +24,29 @@ a:hover {color: black;}
 p {margin: 0.4em 0;}
 .help {margin: 1em 0; background-color: #efefef; padding: 1em; -moz-border-radius: 0.3em;}
 
-#page {width: 720px; margin: 2em auto;}
+.top {width: 100%; height: 0.7em;}
+#page {width: 720px; margin: 0 auto 2em auto; background-color: white; padding: 0 1em;
+    -moz-border-radius: 0 0 1em 1em;}
 
-#head {}
+.bottom {text-align: center; font-size: 70%; color: gray; padding: 0.5em 0;
+    margin-top: 2em; border-top: 1px solid lightgray;}
+
+#logo {float: left; margin-right: 2em; margin-bottom: 1em;}
+
+#head {width: 100%; overflow: hidden; }
 #head h1 {font-size: 500%; letter-spacing: -0.1em; font-weight: bold;}
-#head h1 a {color: black;}
+#head h1 a {color: #222222;}
 #head p {font-variant: small-caps; margin-top: -1em; }
 
-#navigation {width: 100%; overflow: hidden; margin-top: 1em; padding: 0.2em 0em;
-    border-top: 1px solid gray; border-bottom: 1px solid gray;}
-#navigation .sections {float: left;}
-#navigation  a {padding: 0 0.5em; font-variant: small-caps;}
-#navigation .session {float: right; }
+#navigation {margin-top: 1em;}
+#navigation .sections {float: left; }
+#navigation  a, #navigation span {padding: 3em 0.5em 2em 0.5em; font-variant: small-caps;}
+#navigation span {color: white;}
+#navigation a:hover {background-color: #efefef;}
+
+.session {width: 100%; overflow: hidden; border-top: 1px solid gray; border-bottom: 1px solid gray; margin-bottom: 1em;
+   color: gray; font-size: 90%; padding: 0.2em 0;}
+.session a {font-variant: small-caps; padding: 0.5em; }
 .content {padding: 1em 2em;}
 
 .dialog {width: 70%; margin: 3em auto; border: 0.5em solid #efefef; padding: 1em;}

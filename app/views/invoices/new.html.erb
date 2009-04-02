@@ -8,6 +8,8 @@
     <li>La posibilidad de elegir si se trata de Electricidad, Gas (o incluso otros recursos)</li>
     <li>La posibilidad de elegir si se trata de un mes, de dos, de más... (de especificar el periodo)</li>
   </ul>
+  <p>Esto es un posible visualización de cómo podría ser la entrada de datos:</p>
+  <%= image_tag 'factura.png', :style => 'width: 50%;' %>
 </div>
 <br/>
 
@@ -28,7 +30,7 @@
   </p>
   <p>
     <label>&nbsp;</label>
-    <%= f.submit 'Añadir' %>
+    <%= f.submit 'Añadir', :disabled => 'true' %>
   </p>
 <% end %>
 <br/>
