@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421151710) do
+ActiveRecord::Schema.define(:version => 20090421154710) do
 
   create_table "invoices", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,38 @@ ActiveRecord::Schema.define(:version => 20090421151710) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "provincia_id"
+    t.integer  "municipio_id"
+    t.string   "edificio_anyo",                  :limit => 4
+    t.string   "edificio_periodo",               :limit => 32
+    t.string   "vivienda_tipo_edificio"
+    t.integer  "vivienda_num_plantas"
+    t.string   "vivienda_planta"
+    t.integer  "vivienda_estancias"
+    t.integer  "vivienda_servicios"
+    t.string   "vivienda_tejado"
+    t.float    "vivienda_superficie"
+    t.boolean  "equip_fuentes_calef_electr"
+    t.boolean  "equip_fuentes_calef_gasnat"
+    t.boolean  "equip_fuentes_calef_gasoleo"
+    t.boolean  "equip_fuentes_calef_gasbutprop"
+    t.boolean  "equip_fuentes_calef_solar"
+    t.boolean  "equip_fuentes_calef_madera"
+    t.boolean  "equip_fuentes_calef_otros"
+    t.boolean  "equip_fuentes_aire_electr"
+    t.boolean  "equip_fuentes_aire_gasnat"
+    t.boolean  "equip_fuentes_aire_gasoleo"
+    t.boolean  "equip_fuentes_aire_gasbutprop"
+    t.boolean  "equip_fuentes_aire_solar"
+    t.boolean  "equip_fuentes_aire_madera"
+    t.boolean  "equip_fuentes_aire_otros"
+    t.boolean  "equip_fuentes_agua_electr"
+    t.boolean  "equip_fuentes_agua_gasnat"
+    t.boolean  "equip_fuentes_agua_gasoleo"
+    t.boolean  "equip_fuentes_agua_gasbutprop"
+    t.boolean  "equip_fuentes_agua_solar"
+    t.boolean  "equip_fuentes_agua_madera"
+    t.boolean  "equip_fuentes_agua_otros"
   end
 
   create_table "provincias", :force => true do |t|

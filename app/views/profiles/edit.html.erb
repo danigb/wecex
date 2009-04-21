@@ -5,33 +5,33 @@
   <p>De momento esto es sólo un prototipo y por lo tanto no es funcional.</p>
 </div>
 
-<% form_for(@profile) do |f| %>
+<% form_for(@profile, :url => profile_path) do |f| %>
   <%= f.error_messages %>
 
-  <h3>Localización de la vivienda</h3>
+  <h3>Mi ciudad</h3>
   <p class="info">Indique la localidad en la que se encuentra su vivienda:</p>
   <p>
-    <%= f.label 'Localidad' %>
-    <%= f.text_field :localidad %>
+    <%= f.label 'Provincia' %>
+    <%= select :profile, :provincia_id, Provincia.all.collect {|p| [ p.name, p.id ] }  %>
   </p>
   <p>
-    <%= f.label 'Provincia' %>
-    <%= text_field_tag :localidad %>
+    <%= f.label 'Municipio' %>
+    <%= select :profile, :municipio_id, [] %>
   </p>
 
-  <h3>Información del edificio</h3>
+  <h3>Mi edificio</h3>
   <p class="info">Indique, si lo conoce, el año de construcción:</p>
   <p>
     <%= f.label 'Año' %>
-    <%= text_field_tag :build_year %>
+    <%= f.text_field :edificio_anyo %>
   </p>
   <p class="info">En caso contrario señale el periodo aproximado de constrcción:</p>
-  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Anterior a 1950</span></p>
-  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1951 y 1960</span></p>
-  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1961 y 1971</span></p>
-  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Entre 1971 y 1981</span></p>
-  <p><label>&nbsp;</label><%= radio_button_tag :build_year, '' %><span>Posterior a 1981</span></p>
-  
+  <p><label>&nbsp;</label><%= f.radio_button :edificio_periodo, "before1950" %><span>Anterior a 1950</span></p>
+  <p><label>&nbsp;</label><%= f.radio_button :edificio_periodo, "1951to1960" %><span>Entre 1951 y 1960</span></p>
+  <p><label>&nbsp;</label><%= f.radio_button :edificio_periodo, "1961to1971" %><span>Entre 1961 y 1971</span></p>
+  <p><label>&nbsp;</label><%= f.radio_button :edificio_periodo, "1971to1981" %><span>Entre 1971 y 1981</span></p>
+  <p><label>&nbsp;</label><%= f.radio_button :edificio_periodo, "1981after" %><span>Posterior a 1981</span></p>
+
   <p class="info">Indique si se han producido reformas de los siguientes tipos:</p>
   <p><label>&nbsp;</label><%= check_box_tag :reformas, '' %><span>Mejora en el aislamiento del tejado</span></p>
   <p><label>&nbsp;</label><%= check_box_tag :reformas, '' %><span>Mejora en el aislamiento de las paredes</span></p>
