@@ -14,3 +14,38 @@ es:
 
   session:
     close: "Salir"
+
+  encuesta:
+    edificio:
+      before1950: "Antes de 1950"
+      1951to1960: "Entre 1951 y 1960"
+      1961to1970: "Entre 1951 y 1960"
+      1971to1980: "Entre 1951 y 1960"
+      after1981: "Posterior a 1981"
+    vivienda:
+       bloque: "Vivienda en un bloque"
+       aislada: "Vivienda unifamiliar aislada"
+       adosada: "Vivienda unifamiliar adosada"
+       pareada: "Vivienda unifamiliar pareada"
+       planta_baja: "En la planta baja"
+       planta_intermedia: "En una planta intermedia"
+       planta_ultima: "En la última planta"
+       tejado_plano: "Plana"
+       tejado_inclinado: "Inclinada"
+    equipamiento:
+       calef: "Calefacción"
+       aire: "Aire acondicionado"
+       agua: "Agua caliente"
+       electr: "Electricidad"
+       gasnat: "Gas natural"
+       gasoleo: "Gasóleo"
+       gasbutprop: "Gas butano o propano"
+       solar: "Solar"
+       madera: "Madera"
+       otros: "Otros"
+       
+
+       
+
+       
+     

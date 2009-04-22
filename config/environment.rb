@@ -44,3 +44,5 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   config.i18n.default_locale = :es
 end
+
+require "form_helper_answer_extensions"

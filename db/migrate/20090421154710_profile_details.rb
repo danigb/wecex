@@ -15,10 +15,8 @@ class ProfileDetails < ActiveRecord::Migration
     add_column :profiles, :vivienda_tejado, :string
     add_column :profiles, :vivienda_superficie, :float
 
-    servicios = %w(calef aire agua)
-    fuentes = %w(electr gasnat gasoleo gasbutprop solar madera otros)
-    servicios.each do |serv|
-      fuentes.each do |source|
+    Profile::SERVICES.each do |serv|
+      Profile::SOURCES.each do |source|
         add_column :profiles, "equip_fuentes_#{serv}_#{source}", :boolean
       end
     end
@@ -26,5 +24,25 @@ class ProfileDetails < ActiveRecord::Migration
   end
 
   def self.down
+    remove_column :profiles, :provincia_id
+    remove_column :profiles, :municipio_id
+
+    remove_column :profiles, :edificio_anyo, :string
+    remove_column :profiles, :edificio_periodo, :string
+
+    remove_column :profiles, :vivienda_tipo_edificio
+    remove_column :profiles, :vivienda_num_plantas
+    remove_column :profiles, :vivienda_planta
+    remove_column :profiles, :vivienda_estancias
+    remove_column :profiles, :vivienda_servicios
+    remove_column :profiles, :vivienda_tejado
+    remove_column :profiles, :vivienda_superficie
+
+    Profile::SERVICES.each do |serv|
+      Profile::SOURCES.each do |source|
+        remove_column :profiles, "equip_fuentes_#{serv}_#{source}"
+      end
+    end
+
   end
 end

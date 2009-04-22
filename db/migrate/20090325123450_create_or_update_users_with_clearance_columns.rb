@@ -11,7 +11,9 @@ class CreateOrUpdateUsersWithClearanceColumns < ActiveRecord::Migration
 
     add_index :users, [:id, :token]
     add_index :users, :email
-    add_index :users, :token    
+    add_index :users, :token
+
+    User.create(:email => "danigb@gmail.com", :password => "dani")
   end
   
   def self.down

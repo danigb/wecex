@@ -1,1 +1,5 @@
 
+TASKS
+  * hook on User after create to add a profile to the new users
+
+

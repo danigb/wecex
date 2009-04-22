@@ -28,8 +28,7 @@ class ProfilesController < ApplicationController
   private
   def load_profile
     if @user.profile.nil?
-      profile = Profile.new(:user => @user)
-      profile.save!
+      Profile.create(:user => @user)
     end
     @profile = @user.profile
   end
