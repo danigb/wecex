@@ -14,67 +14,11 @@
     <%= select :profile, :municipio_id, [] %>
   </p>
 
-  <h3>Mi edificio</h3>
-  <p class="info">Indique, si lo conoce, el año de construcción:</p>
-  <p>
-    <%= f.label 'Año' %>
-    <%= f.text_field :edificio_anyo %>
-  </p>
-  <p class="info">En caso contrario señale el periodo aproximado de constrcción:</p>
-  <p><%= f.radio_answer :edificio_periodo, "before1950", :edificio %></p>
-  <p><%= f.radio_answer :edificio_periodo, "1951to1960", :edificio %></p>
-  <p><%= f.radio_answer :edificio_periodo, "1961to1970", :edificio %></p>
-  <p><%= f.radio_answer :edificio_periodo, "1971to1980", :edificio %></p>
-  <p><%= f.radio_answer :edificio_periodo, "after1981", :edificio %></p>
+  <%= render :partial => 'edit_edificio_vivienda', :locals => {:f => f} %>
+  <%= render :partial => 'edit_edificio_equipamiento', :locals => {:f => f} %>
+  
 
-  <h3>Mi vivienda</h3>
-  <p class="info">¿En qué tipo de edificio está ubicada a vivienda?</p>
-  <p><%= f.radio_answer :vivienda_tipo_edificio, "bloque", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_tipo_edificio, "aislada", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_tipo_edificio, "adosada", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_tipo_edificio, "pareada", :vivienda %></p>
-
-  <p class="info">Indique el número de plantas sobre rasante (incluyendo la baja):</p>
-  <p><label>&nbsp;</label><%= f.text_field :vivienda_num_plantas %></p>
-
-  <p class="info">Si su vivienda pertenece un bloque, ¿en qué planta está situada?</p>
-  <p><%= f.radio_answer :vivienda_planta, "planta_baja", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_planta, "planta_intermedia", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_planta, "planta_ultima", :vivienda %></p>
-
-  <p class="info">Número de estancias, incluyendo la cocina:</p>
-  <p><label>&nbsp;</label><%= f.text_field :vivienda_estancias %></p>
-
-  <p class="info">Número de cuartos de baño/aseos:</p>
-  <p><label>&nbsp;</label><%= f.text_field :vivienda_servicios %></p>
-
-  <p class="info">Indique la estructura del tejado:</p>
-  <p><%= f.radio_answer :vivienda_tejado, "tejado_plano", :vivienda %></p>
-  <p><%= f.radio_answer :vivienda_tejado, "tejado_inclinado", :vivienda %></p>
-
-  <p class="info">Superficie aproximada útil:</p>
-  <p><label>&nbsp;</label><%= f.text_field :vivienda_superficie %></p>
-
-
-  <h3>Mi equipamiento</h3>
-
-  <p class="info">señale las fuentes de energía utilizadas para su vivienda<br/>
-  (puede señalar varias fuentes de energía para una misma instalación):</p>
-  <table>
-    <th>
-      <td></td><% Profile::SERVICES.each do |service| %><td>
-        <%= t(service, :scope => [:encuesta, :equipamiento]) %>
-      </td><%  end -%>
-    </th>
-    <% Profile::SOURCES.each do |source| %>
-      <tr><td><%= t(source, :scope => [:encuesta, :equipamiento]) %><td>
-        <% Profile::SERVICES.each do |service| %>
-          <td><%= f.check_box "equip_fuentes_#{service}_#{source}"  %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-
+<br/>
   <p>
     <label>&nbsp;</label>
     <%= f.submit 'Guardar' %>

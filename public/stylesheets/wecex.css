@@ -1,5 +1,6 @@
 
 html {
+    font-size: 80%;
     background-color: #efefef;
     color: black;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -16,7 +17,8 @@ html {
 h1, h2, h3 {color: #333333;}
 h1 {font-size: 250%;}
 h2 {font-size: 150%;}
-h3 {font-size: 125%; border-bottom: 1px solid #efefef; margin: 1em 0 1em 0;}
+h3 {font-size: 125%; border-bottom: 1px solid #efefef; margin: 2em 0 1em 0;}
+h4 {font-size: 100%; border-bottom: 1px solid #efefef; margin-top: 2em ; padding-left: 8em;}
 li {list-style-type: disc; margin-left: 2em;}
 
 a {color: gray; text-decoration: none;}

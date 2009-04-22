@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421154710) do
+ActiveRecord::Schema.define(:version => 20090422172020) do
 
   create_table "invoices", :force => true do |t|
     t.integer  "user_id"
@@ -36,13 +36,19 @@ ActiveRecord::Schema.define(:version => 20090421154710) do
     t.integer  "municipio_id"
     t.string   "edificio_anyo",                  :limit => 4
     t.string   "edificio_periodo",               :limit => 32
-    t.string   "vivienda_tipo_edificio"
+    t.string   "vivienda_tipo_edificio",         :limit => 32
     t.integer  "vivienda_num_plantas"
     t.string   "vivienda_planta"
     t.integer  "vivienda_estancias"
     t.integer  "vivienda_servicios"
     t.string   "vivienda_tejado"
     t.float    "vivienda_superficie"
+    t.boolean  "vivienda_aistejado"
+    t.boolean  "vivienda_aisparedes"
+    t.boolean  "vivienda_toldos"
+    t.boolean  "vivienda_doblevidrio"
+    t.boolean  "vivienda_asisuelo"
+    t.string   "vivienda_reforma_ultima",        :limit => 32
     t.boolean  "equip_fuentes_calef_electr"
     t.boolean  "equip_fuentes_calef_gasnat"
     t.boolean  "equip_fuentes_calef_gasoleo"
@@ -64,6 +70,9 @@ ActiveRecord::Schema.define(:version => 20090421154710) do
     t.boolean  "equip_fuentes_agua_solar"
     t.boolean  "equip_fuentes_agua_madera"
     t.boolean  "equip_fuentes_agua_otros"
+    t.boolean  "equip_agua_caliente"
+    t.string   "equip_agua_tipo",                :limit => 8
+    t.string   "equip_agua_dispositivo",         :limit => 8
   end
 
   create_table "provincias", :force => true do |t|

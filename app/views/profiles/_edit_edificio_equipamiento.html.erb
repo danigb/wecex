@@ -1,0 +1,58 @@
+<h3>Mi equipamiento</h3>
+
+<p class="info">señale las fuentes de energía utilizadas para su vivienda<br/>
+(puede señalar varias fuentes de energía para una misma instalación):</p>
+<table>
+  <th>
+    <td></td><% Profile::EQUIP_SERVICIOS.each do |service| %><td>
+        <%= t(service, :scope => [:encuesta, :equipamiento]) %>
+      </td><%  end -%>
+  </th>
+  <% Profile::EQUIP_FUENTES.each do |source| %>
+    <tr><td><%= t(source, :scope => [:encuesta, :equipamiento]) %><td>
+      <% Profile::EQUIP_SERVICIOS.each do |service| %>
+        <td><%= f.check_box "equip_fuentes_#{service}_#{source}"  %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<h4>Agua caliente</h4>
+
+<p class="info">¿tiene agua caliente?</p>
+
+<p class="info">¿qué dispositivo calienta el agua?</p>
+<p class="info">¿Dispone de paneles solares para calentar agua?</p>
+<p class="info">Edad aproximada de la instalación</p>
+
+<p class="info">En caso de que tenga caldera... ¿es individual o centralizada?</p>
+<p class="info">En caso de que tenga caldera... ¿tiene depósito de acumulación?</p>
+
+<h4>Calefacción</h4>
+<p class="info">¿tiene calefacción?</p>
+<p class="info">¿en qué estancias tiene calefacción?</p>
+<p class="info">¿tipo de calefacción?</p>
+<p class="info">Edad aproximada de la instalación</p>
+
+<p class="info">Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?</p>
+<p class="info">Si no es la misma, ¿qué tipo de caldera tiene la calefacción?</p>
+individual | centralizada
+<p class="info">Si tiene bombas de calor... ¿de qué tipo son? </p>
+
+<h4>Aire acondicionado</h4>
+<p class="info">¿tiene aire acondicionado?</p>
+<p class="info">¿en qué estancias tiene aire acondicionado?</p>
+<p class="info">¿es individual o centralizada para todo el bloque?</p>
+<p class="info">Edad aproximada de la instalación</p>
+
+<p class="info">Si el aire acondicionado es individual... ¿que configuración tiene su instalación?</p>
+<p class="info">(en caso de equipos independientes) ¿cómo son esos equipos independientes?<p>
+  (esta pregunta no parece tener mucho sentido, revisar el doc)
+
+  <h4>Electrodomésticos</h4>
+
+
+
+
+
+
