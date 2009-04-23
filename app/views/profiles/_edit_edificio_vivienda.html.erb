@@ -31,8 +31,9 @@
 <p><label>&nbsp;</label><%= f.text_field :vivienda_servicios %></p>
 
 <p class="info">Indique la estructura del tejado:</p>
-<p><%= f.radio_answer :vivienda_tejado, "tejado_plano", :vivienda %></p>
-<p><%= f.radio_answer :vivienda_tejado, "tejado_inclinado", :vivienda %></p>
+<% Profile::VIVIENDA_TEJADO.each do |option| %>
+<p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
+<% end -%>
 
 <p class="info">Superficie aproximada útil:</p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_superficie %></p>

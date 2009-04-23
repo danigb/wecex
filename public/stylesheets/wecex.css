@@ -62,4 +62,6 @@ form label {float: left; display: block; width: 7.5em; text-align: right; paddin
 form span {margin-left: 1em;}
 
 form table {margin: 1em 0 2em 8em;}
+form tr.even {background-color: #efefef;}
 form table td {padding: 0.2em 1em; text-align: center;}
+form table td.name {text-align: right; padding-right: 0.5em;}

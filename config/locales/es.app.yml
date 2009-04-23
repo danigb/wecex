@@ -16,6 +16,12 @@ es:
     close: "Salir"
 
   encuesta:
+    comun:
+      n: "No"
+      s: "Sí"
+      todas: "En todas"
+      alguna: "En alguna"
+      ninguna: "En ninguna"
     edificio:
       antes1950: "Antes de 1950"
       de1951a1960: "Entre 1951 y 1960"
@@ -51,6 +57,14 @@ es:
        solar: "Solar"
        madera: "Madera"
        otros: "Otros"
+       termo: "Termo eléctrico"
+       caldera: "Caldera"
+       bomba: "Bomba de calor"
+       individual: "Individual"
+       centralizada: "Centralizada"
+       salas: "Salón/salas de estar"
+       dormitorios: "Dormitorios"
+       
        
 
        

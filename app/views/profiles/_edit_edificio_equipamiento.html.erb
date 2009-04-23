@@ -9,7 +9,7 @@
       </td><%  end -%>
   </th>
   <% Profile::EQUIP_FUENTES.each do |source| %>
-    <tr><td><%= t(source, :scope => [:encuesta, :equipamiento]) %><td>
+    <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(source, :scope => [:encuesta, :equipamiento]) %><td>
       <% Profile::EQUIP_SERVICIOS.each do |service| %>
         <td><%= f.check_box "equip_fuentes_#{service}_#{source}"  %></td>
       <% end %>
@@ -20,18 +20,56 @@
 <h4>Agua caliente</h4>
 
 <p class="info">¿tiene agua caliente?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_agua_caliente, option, :comun %></p>
+<% end -%>
 
 <p class="info">¿qué dispositivo calienta el agua?</p>
+<% Profile::EQUIP_AGUA_TIPO.each do |option| %>
+  <p><%= f.radio_answer :equip_agua_tipo, option, :equipamiento %></p>
+<% end -%>
+
 <p class="info">¿Dispone de paneles solares para calentar agua?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_agua_solar, option, :comun %></p>
+<% end -%>
+
 <p class="info">Edad aproximada de la instalación</p>
+<p><label>&nbsp;</label><%= f.text_field :equip_agua_edad %></p>
 
 <p class="info">En caso de que tenga caldera... ¿es individual o centralizada?</p>
+<% Profile::EQUIP_AGUA_CALDERA_TIPO.each do |option| %>
+  <p><%= f.radio_answer :equip_agua_caldera_tipo, option, :equipamiento %></p>
+<% end -%>
+
 <p class="info">En caso de que tenga caldera... ¿tiene depósito de acumulación?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_agua_caldera_acumulacion, option, :comun %></p>
+<% end -%>
+
+
 
 <h4>Calefacción</h4>
 <p class="info">¿tiene calefacción?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_calefaccion, option, :comun %></p>
+<% end -%>
+
 <p class="info">¿en qué estancias tiene calefacción?</p>
+<table>
+  <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
+  <% Profile::EQUIP_AC_DONDE.each do |donde| %>
+    <tr class="<%= cycle :odd, :even %> ">
+      <td class="name"><%= t(donde, :scope => [:encuesta, :equipamiento]) %></td>
+      <% Profile::TAN.each do |option| %>
+        <td><%= f.radio_button "equip_ac_donde_#{donde}", option  %></td>
+      <% end -%>
+    </tr>
+  <% end %>
+</table>
+
 <p class="info">¿tipo de calefacción?</p>
+
 <p class="info">Edad aproximada de la instalación</p>
 
 <p class="info">Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?</p>
@@ -47,9 +85,9 @@ individual | centralizada
 
 <p class="info">Si el aire acondicionado es individual... ¿que configuración tiene su instalación?</p>
 <p class="info">(en caso de equipos independientes) ¿cómo son esos equipos independientes?<p>
-  (esta pregunta no parece tener mucho sentido, revisar el doc)
+(esta pregunta no parece tener mucho sentido, revisar el doc)
 
-  <h4>Electrodomésticos</h4>
+<h4>Electrodomésticos</h4>
 
 
 
