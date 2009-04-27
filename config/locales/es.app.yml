@@ -64,8 +64,28 @@ es:
        centralizada: "Centralizada"
        salas: "Salón/salas de estar"
        dormitorios: "Dormitorios"
-       
-       
+       radiador: "Radiadores"
+       acumulad: "Acumuladores"
+       uneq: "Un equipo con varias salidas de aire"
+       varioseq: "Varios equipos"
+    dispositivos:
+        lavadora: "Lavadora"
+        lavavajillas: "Lavavajillas"
+        frigo: "Frigorífico"
+        hornoel: "Horno eléctrico"
+        hornonoel: "Horno no eléctrico"
+        microondas: "Microondas"
+        tele: "Televisión"
+        ordenador: "Ordenador de sobremesa"
+        portatil: "Ordenador portátil"
+        secadora: "Secadora"
+        congelador: "Congelador"
+        incan: "Incandescentes (bombilla tradicional y halógenos)"
+        bajocon: "Lámparas de bajo consumo"
+        fluor: "Fluorescentes"
+         
+
+
 
        
 

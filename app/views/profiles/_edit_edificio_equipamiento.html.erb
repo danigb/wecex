@@ -38,7 +38,7 @@
 <p><label>&nbsp;</label><%= f.text_field :equip_agua_edad %></p>
 
 <p class="info">En caso de que tenga caldera... ¿es individual o centralizada?</p>
-<% Profile::EQUIP_AGUA_CALDERA_TIPO.each do |option| %>
+<% Profile::EQUIP_TIPO_IC.each do |option| %>
   <p><%= f.radio_answer :equip_agua_caldera_tipo, option, :equipamiento %></p>
 <% end -%>
 
@@ -50,15 +50,57 @@
 
 
 <h4>Calefacción</h4>
-<p class="info">¿tiene calefacción?</p>
+<p class="info">¿Tiene calefacción?</p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion, option, :comun %></p>
 <% end -%>
 
-<p class="info">¿en qué estancias tiene calefacción?</p>
+<p class="info">¿En qué estancias tiene calefacción?</p>
 <table>
   <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
-  <% Profile::EQUIP_AC_DONDE.each do |donde| %>
+  <% Profile::EQUIP_DONDE.each do |donde| %>
+    <tr class="<%= cycle :odd, :even %> ">
+      <td class="name"><%= t(donde, :scope => [:encuesta, :equipamiento]) %></td>
+      <% Profile::TAN.each do |option| %>
+        <td><%= f.radio_button "equip_calefaccion_donde_#{donde}", option  %></td>
+      <% end -%>
+    </tr>
+  <% end %>
+</table>
+
+<p class="info">¿Qué tipo de calefacción tiene?</p>
+<% Profile::EQUIP_AC_TIPO.each do |option| %>
+  <p><%= f.radio_answer :equip_calefaccion_tipo, option, :equipamiento %></p>
+<% end -%>
+
+<p class="info">Edad aproximada de la instalación</p>
+<p><label>&nbsp;</label><%= f.text_field :equip_calefaccion_edad %></p>
+
+<p class="info">Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_calefaccion_misma, option, :comun %></p>
+<% end -%>
+
+<p class="info">Si no es la misma, ¿qué tipo de caldera tiene la calefacción?</p>
+<% Profile::EQUIP_TIPO_IC.each do |option| %>
+  <p><%= f.radio_answer :equip_calefaccion_caldera_tipo, option, :equipamiento %></p>
+<% end -%>
+
+<p class="info">Si tiene bombas de calor... ¿de qué tipo son? </p>
+<% Profile::EQUIP_BOMBA_TIPO.each do |option| %>
+  <p><%= f.radio_answer :equip_calefaccion_bomba_tipo, option, :equipamiento %></p>
+<% end -%>
+
+<h4>Aire acondicionado</h4>
+<p class="info">¿tiene aire acondicionado?</p>
+<% Profile::SINO.each do |option| %>
+  <p><%= f.radio_answer :equip_ac, option, :comun %></p>
+<% end -%>
+
+<p class="info">¿en qué estancias tiene aire acondicionado?</p>
+<table>
+  <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
+  <% Profile::EQUIP_DONDE.each do |donde| %>
     <tr class="<%= cycle :odd, :even %> ">
       <td class="name"><%= t(donde, :scope => [:encuesta, :equipamiento]) %></td>
       <% Profile::TAN.each do |option| %>
@@ -68,27 +110,34 @@
   <% end %>
 </table>
 
-<p class="info">¿tipo de calefacción?</p>
-
-<p class="info">Edad aproximada de la instalación</p>
-
-<p class="info">Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?</p>
-<p class="info">Si no es la misma, ¿qué tipo de caldera tiene la calefacción?</p>
-individual | centralizada
-<p class="info">Si tiene bombas de calor... ¿de qué tipo son? </p>
-
-<h4>Aire acondicionado</h4>
-<p class="info">¿tiene aire acondicionado?</p>
-<p class="info">¿en qué estancias tiene aire acondicionado?</p>
 <p class="info">¿es individual o centralizada para todo el bloque?</p>
+<% Profile::EQUIP_TIPO_IC.each do |option| %>
+  <p><%= f.radio_answer :equip_ac_tipo, option, :equipamiento %></p>
+<% end -%>
+
 <p class="info">Edad aproximada de la instalación</p>
+<p><label>&nbsp;</label><%= f.text_field :equip_ac_edad %></p>
 
 <p class="info">Si el aire acondicionado es individual... ¿que configuración tiene su instalación?</p>
 <p class="info">(en caso de equipos independientes) ¿cómo son esos equipos independientes?<p>
-(esta pregunta no parece tener mucho sentido, revisar el doc)
+
 
 <h4>Electrodomésticos</h4>
+<p class="info">¿Cuántos de estos dispositivos tiene en su vivienda?</p>
+<table>
+<% Profile::EQUIP_DISPOSITIVOS.each do |disp| %>
+  <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
+  <td><%= f.text_field "equip_disp_tiene_#{disp}"  %></td></tr>
+<% end %>
+</table>
 
+<p class="info">¿Qué cantidad aproximada tiene de los siguientes sistemas de iluminación?</p>
+<table>
+<% Profile::EQUIP_ILUMINACION.each do |disp| %>
+  <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
+  <td><%= f.text_field "equip_ilum_tiene_#{disp}"  %></td></tr>
+<% end %>
+</table>
 
 
 

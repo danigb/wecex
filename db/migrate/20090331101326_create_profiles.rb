@@ -2,8 +2,8 @@ class CreateProfiles < ActiveRecord::Migration
   def self.up
     create_table :profiles do |t|
       t.string :name
-      t.text :cuestionario
       t.references :user
+
 
       t.timestamps
     end

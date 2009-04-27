@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090422172020) do
+ActiveRecord::Schema.define(:version => 20090427183830) do
 
   create_table "invoices", :force => true do |t|
     t.integer  "user_id"
@@ -28,15 +28,14 @@ ActiveRecord::Schema.define(:version => 20090422172020) do
 
   create_table "profiles", :force => true do |t|
     t.string   "name"
-    t.text     "cuestionario"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "provincia_id"
     t.integer  "municipio_id"
-    t.string   "edificio_anyo",                     :limit => 4
-    t.string   "edificio_periodo",                  :limit => 32
-    t.string   "vivienda_tipo_edificio",            :limit => 32
+    t.string   "edificio_anyo",                       :limit => 4
+    t.string   "edificio_periodo",                    :limit => 32
+    t.string   "vivienda_tipo_edificio",              :limit => 32
     t.integer  "vivienda_num_plantas"
     t.string   "vivienda_planta"
     t.integer  "vivienda_estancias"
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20090422172020) do
     t.boolean  "vivienda_toldos"
     t.boolean  "vivienda_doblevidrio"
     t.boolean  "vivienda_asisuelo"
-    t.string   "vivienda_reforma_ultima",           :limit => 32
+    t.string   "vivienda_reforma_ultima",             :limit => 32
     t.boolean  "equip_fuentes_calef_electr"
     t.boolean  "equip_fuentes_calef_gasnat"
     t.boolean  "equip_fuentes_calef_gasoleo"
@@ -70,29 +69,32 @@ ActiveRecord::Schema.define(:version => 20090422172020) do
     t.boolean  "equip_fuentes_agua_solar"
     t.boolean  "equip_fuentes_agua_madera"
     t.boolean  "equip_fuentes_agua_otros"
-    t.string   "equip_agua_caliente",               :limit => 3
-    t.string   "equip_agua_tipo",                   :limit => 8
-    t.string   "equip_agua_solar",                  :limit => 3
-    t.integer  "equip_agua_edad",                   :limit => 3
-    t.string   "equip_agua_caldera_tipo",           :limit => 8
-    t.string   "equip_agua_caldera_acumulacion",    :limit => 3
-    t.string   "equip_calefaccion",                 :limit => 3
-    t.string   "equip_calefaccion_tipo",            :limit => 8
-    t.integer  "equip_calefaccion_edad",            :limit => 3
-    t.string   "equip_calefaccion_misma",           :limit => 3
-    t.string   "equip_calefaccion_caldera_tipo",    :limit => 8
-    t.string   "equip_calefaccion_bomba_tipo",      :limit => 8
-    t.string   "equip_ac",                          :limit => 3
-    t.string   "equip_ac_donde_salas",              :limit => 8
-    t.string   "equip_ac_donde_dormitorios",        :limit => 8
-    t.string   "equip_ac_tipo",                     :limit => 8
-    t.integer  "equip_ac_edad",                     :limit => 3
+    t.string   "equip_agua_caliente",                 :limit => 3
+    t.string   "equip_agua_tipo",                     :limit => 8
+    t.string   "equip_agua_solar",                    :limit => 3
+    t.integer  "equip_agua_edad",                     :limit => 3
+    t.string   "equip_agua_caldera_tipo",             :limit => 8
+    t.string   "equip_agua_caldera_acumulacion",      :limit => 3
+    t.string   "equip_calefaccion",                   :limit => 3
+    t.string   "equip_calefaccion_tipo",              :limit => 8
+    t.string   "equip_calefaccion_donde_salas",       :limit => 8
+    t.string   "equip_calefaccion_donde_dormitorios", :limit => 8
+    t.integer  "equip_calefaccion_edad",              :limit => 3
+    t.string   "equip_calefaccion_misma",             :limit => 3
+    t.string   "equip_calefaccion_caldera_tipo",      :limit => 8
+    t.string   "equip_calefaccion_bomba_tipo",        :limit => 8
+    t.string   "equip_ac",                            :limit => 3
+    t.string   "equip_ac_donde_salas",                :limit => 8
+    t.string   "equip_ac_donde_dormitorios",          :limit => 8
+    t.string   "equip_ac_tipo",                       :limit => 8
+    t.integer  "equip_ac_edad",                       :limit => 3
     t.integer  "equip_disp_tiene_lavadora"
     t.integer  "equip_disp_tiene_lavavajillas"
-    t.integer  "equip_disp_tiene_frigorífico"
-    t.integer  "equip_disp_tiene_hornoelhornonoel"
+    t.integer  "equip_disp_tiene_frigo"
+    t.integer  "equip_disp_tiene_hornoel"
+    t.integer  "equip_disp_tiene_hornonoel"
     t.integer  "equip_disp_tiene_microondas"
-    t.integer  "equip_disp_tiene_television"
+    t.integer  "equip_disp_tiene_tele"
     t.integer  "equip_disp_tiene_ordenador"
     t.integer  "equip_disp_tiene_portatil"
     t.integer  "equip_disp_tiene_secadora"
@@ -100,6 +102,9 @@ ActiveRecord::Schema.define(:version => 20090422172020) do
     t.integer  "equip_ilum_tiene_incan"
     t.integer  "equip_ilum_tiene_bajocon"
     t.integer  "equip_ilum_tiene_fluor"
+    t.integer  "costumbres_personas"
+    t.integer  "costumbres_horas"
+    t.text     "opinion"
   end
 
   create_table "provincias", :force => true do |t|
@@ -118,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20090422172020) do
     t.string   "salt",               :limit => 128
     t.string   "token",              :limit => 128
     t.datetime "token_expires_at"
-    t.boolean  "email_confirmed",                   :default => false, :null => false
+    t.boolean  "email_confirmed",                   :default => true, :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

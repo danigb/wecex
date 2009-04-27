@@ -1,16 +1,17 @@
 <h1>Encuesta sobre el consumo energético de su edificio</h1>
 
+<div id="encuesta">
 <% form_for(@profile, :url => profile_path) do |f| %>
   <%= f.error_messages %>
 
   <h3>Mi ciudad</h3>
-  <p class="info">Indique la localidad en la que se encuentra su vivienda:</p>
+  <p class="info">Indique la provincia y municipio en los que se encuentra su vivienda:</p>
   <p>
-    <%= f.label 'Provincia' %>
+    <%= f.label '' %>
     <%= select :profile, :provincia_id, Provincia.all.collect {|p| [ p.name, p.id ] }  %>
   </p>
   <p>
-    <%= f.label 'Municipio' %>
+    <%= f.label '' %>
     <%= select :profile, :municipio_id, [] %>
   </p>
 
@@ -18,10 +19,23 @@
   <%= render :partial => 'edit_edificio_equipamiento', :locals => {:f => f} %>
   
 
+<h3>Mis costumbres</h3>
+<p class="info">Número de personas que habitan la vivienda:</p>
+<p><label>&nbsp;</label><%= f.text_field :costumbres_personas %></p>
+
+<p class="info">Número de horas que la vivienda está ocupada en días laborables:</p>
+<p><label>&nbsp;</label><%= f.text_field :costumbres_horas %></p>
+<br/>
+
+<h3>Mi opinión</h3>
+<p class="info">¿Quiere añadir algun detalle relevante relacionado con el consumo energético de su vivienda?</p>
+<p><label>&nbsp;</label><%= f.text_area :opinion %></p>
+<br/>
+
 <br/>
   <p>
     <label>&nbsp;</label>
     <%= f.submit 'Guardar' %>
   </p>
 <% end %>
-
+</div>
