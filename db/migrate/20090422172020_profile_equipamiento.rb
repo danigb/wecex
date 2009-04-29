@@ -15,6 +15,9 @@ class ProfileEquipamiento < ActiveRecord::Migration
 
     add_column :profiles, :equip_calefaccion, :string, :limit => 3
     add_column :profiles, :equip_calefaccion_tipo, :string, :limit => 8
+    Profile::EQUIP_DONDE.each do |donde|
+      add_column :profiles, "equip_calefaccion_donde_#{donde}", :string, :limit => 8
+    end
     add_column :profiles, :equip_calefaccion_edad, :integer, :limit => 3
     add_column :profiles, :equip_calefaccion_misma, :string, :limit => 3
     add_column :profiles, :equip_calefaccion_caldera_tipo, :string, :limit => 8
@@ -22,7 +25,7 @@ class ProfileEquipamiento < ActiveRecord::Migration
 
 
     add_column :profiles, :equip_ac, :string, :limit => 3
-    Profile::EQUIP_AC_DONDE.each do |donde|
+    Profile::EQUIP_DONDE.each do |donde|
       add_column :profiles, "equip_ac_donde_#{donde}", :string, :limit => 8
     end
     add_column :profiles, :equip_ac_tipo, :string, :limit => 8
@@ -54,13 +57,16 @@ class ProfileEquipamiento < ActiveRecord::Migration
 
     remove_column :profiles, :equip_calefaccion
     remove_column :profiles, :equip_calefaccion_tipo
+    Profile::EQUIP_DONDE.each do |donde|
+      remove_column :profiles, "equip_calefaccion_donde_#{donde}", :string, :limit => 8
+    end
     remove_column :profiles, :equip_calefaccion_edad
     remove_column :profiles, :equip_calefaccion_misma
     remove_column :profiles, :equip_calefaccion_caldera_tipo
     remove_column :profiles, :equip_calefaccion_bomba_tipo
 
     remove_column :profiles, :equip_ac, :string
-    Profile::EQUIP_AC_DONDE.each do |donde|
+    Profile::EQUIP_DONDE.each do |donde|
       remove_column :profiles, "equip_ac_donde_#{donde}", :string, :limit => 8
     end
     remove_column :profiles, :equip_ac_tipo

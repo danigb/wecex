@@ -17,8 +17,8 @@ html {
 h1, h2, h3 {color: #333333;}
 h1 {font-size: 250%;}
 h2 {font-size: 150%;}
-h3 {font-size: 125%; border-bottom: 1px solid #efefef; margin: 2em 0 1em 0;}
-h4 {font-size: 100%; border-bottom: 1px solid #efefef; margin-top: 2em ; padding-left: 8em;}
+h3 {font-size: 125%; border-bottom: 1px solid #9F9F9F; margin: 2em 0 1em 0; padding-left: 6.5em;}
+h4 {font-size: 100%; border-bottom: 1px solid #9F9F9F; margin-top: 2em ; margin-left: 7em; padding-left: 1em;  }
 li {list-style-type: disc; margin-left: 2em;}
 
 a {color: gray; text-decoration: none;}
@@ -31,7 +31,7 @@ p {margin: 0.4em 0;}
     -moz-border-radius: 0 0 1em 1em;}
 
 .bottom {text-align: center; font-size: 70%; color: gray; padding: 0.5em 0;
-    margin-top: 2em; border-top: 1px solid lightgray;}
+    margin-top: 2em; border-top: 1px solid #9F9F9F;}
 
 #logo {float: left; margin-right: 2em; margin-bottom: 1em;}
 
@@ -56,12 +56,14 @@ p {margin: 0.4em 0;}
 .dialog ul {margin: 1em 0 0.5em 8em;}
 .dialog ul li {list-style-type: none; margin-left: 0; margin-top: 0.2em;}
 form p {width: 100%; overflow: hidden; margin-bottom: 0.2em;}
-form p.info {margin: 1em 0 0.5em 8em; color: gray;}
-form label {float: left; display: block; width: 7.5em; text-align: right; padding-top: 0.2em;
-    margin-right: 0.5em; color: gray;}
+form p.info {margin: 1em 0 0.5em 8em; color: #4F4F4F;}
+form label {float: left; display: block; width: 4em; text-align: right; padding-top: 0.2em;
+    margin-right: 0.5em; margin-left: 4.5em; color: gray;}
 form span {margin-left: 1em;}
+#encuesta input[type=text] {width: 6em;}
+#encuesta textarea {width: 40em; height: 10em;}
 
 form table {margin: 1em 0 2em 8em;}
 form tr.even {background-color: #efefef;}
 form table td {padding: 0.2em 1em; text-align: center;}
-form table td.name {text-align: right; padding-right: 0.5em;}
+form table td.name {text-align: right; padding-right: 0.5em; width: 12em;}
