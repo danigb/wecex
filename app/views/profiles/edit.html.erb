@@ -1,9 +1,9 @@
-<h1>Encuesta sobre el consumo energético de su edificio</h1>
+<h1><%=  t(:titulo, :scope => [:encuesta]) %></h1>
 
 <% form_for(@profile, :url => profile_path) do |f| %>
   <%= f.error_messages %>
 
-  <h3>Mi ciudad</h3>
+  <h3><%=  t(:titulo, :scope => [:encuesta, :ciudad]) %></h3>
   <p class="info">Indique la localidad en la que se encuentra su vivienda:</p>
   <p>
     <%= f.label 'Provincia' %>
@@ -16,9 +16,9 @@
 
   <%= render :partial => 'edit_edificio_vivienda', :locals => {:f => f} %>
   <%= render :partial => 'edit_edificio_equipamiento', :locals => {:f => f} %>
-  
 
-<br/>
+
+  <br/>
   <p>
     <label>&nbsp;</label>
     <%= f.submit 'Guardar' %>
