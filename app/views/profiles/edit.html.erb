@@ -5,9 +5,7 @@
     <%= f.error_messages %>
 
     <h3><%=  t(:titulo, :scope => [:encuesta, :ciudad]) %></h3>
-    <p class="info">Indique la localidad en la que se encuentra su vivienda:</p>
-    <h3>Mi ciudad</h3>
-    <p class="info">Indique la provincia y municipio en los que se encuentra su vivienda:</p>
+    <p class="info"><%=  t(:localidad, :scope => [:encuesta, :ciudad]) %></p>
     <p>
       <%= f.label '' %>
       <%= select :profile, :provincia_id, Provincia.all.collect {|p| [ p.name, p.id ] }  %>
@@ -23,20 +21,17 @@
 
     <br/>
     <h3>Mis costumbres</h3>
-    <p class="info">Número de personas que habitan la vivienda:</p>
+    <p class="info"><%=  t(:personas, :scope => [:encuesta, :costumbres]) %></p>
     <p><label>&nbsp;</label><%= f.text_field :costumbres_personas %></p>
 
-    <p class="info">Número de horas que la vivienda está ocupada en días laborables:</p>
+    <p class="info"><%=  t(:horas, :scope => [:encuesta, :costumbres]) %></p>
     <p><label>&nbsp;</label><%= f.text_field :costumbres_horas %></p>
     <br/>
 
     <h3>Mi opinión</h3>
-    <p class="info">¿Quiere añadir algun detalle relevante relacionado con el consumo energético de su vivienda?</p>
+    <p class="info"><%=  t(:opina, :scope => [:encuesta, :opinion]) %></p>
     <p><label>&nbsp;</label><%= f.text_area :opinion %></p>
     <br/>
-
-    <br/>
-    >>>>>>> 87ac155db6dd6ed76df4f340eac1877117486f95:app/views/profiles/edit.html.erb
     <p>
       <label>&nbsp;</label>
       <%= f.submit 'Guardar' %>

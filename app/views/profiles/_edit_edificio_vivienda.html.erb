@@ -1,51 +1,53 @@
-<h3>Mi edificio</h3>
+<h3><%=  t(:titulo, :scope => [:encuesta, :edificio]) %></h3>
 
-<p class="info">Indique, si lo conoce, el año de construcción:</p>
+
+<p class="info"><%=  t(:anyo, :scope => [:encuesta, :edificio]) %></p>
 <p><%= f.label '' %><%= f.text_field :edificio_anyo %></p>
 
-<p class="info">En caso contrario señale el periodo aproximado de construcción:</p>
+<p class="info"><%=  t(:periodo, :scope => [:encuesta, :edificio]) %></p>
 <% Profile::EDIFICIO_PERIODO.each do |periodo| %>
   <p><%= f.radio_answer :edificio_periodo, periodo, :edificio %></p>
 <% end %>
 
-<p class="info">¿En qué tipo de edificio está ubicada a vivienda?</p>
+<p class="info"><%=  t(:tipo, :scope => [:encuesta, :edificio]) %></p>
 <% Profile::VIVIENDA_TIPO_EDIFICIO.each do |tipo| %>
   <p><%= f.radio_answer :vivienda_tipo_edificio, tipo, :vivienda %></p>
 <% end %>
 
-<p class="info">Indique el número de plantas que tiene el edificio sobre rasante (incluyendo la baja):</p>
+<p class="info"><%=  t(:plantas, :scope => [:encuesta, :edificio]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_num_plantas %></p>
 
 
-<h3>Mi vivienda</h3>
+    <h3><%=  t(:titulo, :scope => [:encuesta, :vivienda]) %></h3>
 
-<p class="info">Si su vivienda pertenece un bloque, ¿en qué planta está situada?</p>
+
+<p class="info"><%=  t(:planta, :scope => [:encuesta, :vivienda]) %></p>
 <% Profile::VIVIENDA_PLANTA.each do |planta| %>
   <p><%= f.radio_answer :vivienda_planta, planta, :vivienda %></p>
 <%  end -%>
 
-<p class="info">Número de estancias, incluyendo la cocina:</p>
+<p class="info"><%=  t(:estancias, :scope => [:encuesta, :vivienda]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_estancias %></p>
 
-<p class="info">Número de cuartos de baño/aseos:</p>
+<p class="info"><%=  t(:aseos, :scope => [:encuesta, :vivienda]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_servicios %></p>
 
-<p class="info">Indique la estructura del tejado:</p>
+<p class="info"><%=  t(:tejado, :scope => [:encuesta, :vivienda]) %></p>
 <% Profile::VIVIENDA_TEJADO.each do |option| %>
-<p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
+  <p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
 <% end -%>
 
-<p class="info">Superficie aproximada útil:</p>
+<p class="info"><%=  t(:superficie, :scope => [:encuesta, :vivienda]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_superficie %></p>
 
-<p class="info">¿se ha realizado alguna reforma de las siguientes?</p>
+<p class="info"><%=  t(:reformas, :scope => [:encuesta, :vivienda]) %></p>
 <% Profile::VIVIENDA_REFORMAS.each do |reforma| %>
   <p><label>&nbsp;</label><%= f.check_box "vivienda_#{reforma}" %>
-  <span><%= t("reforma_#{reforma}", :scope => [:encuesta, :vivienda]) %></span>
+    <span><%= t("reforma_#{reforma}", :scope => [:encuesta, :vivienda]) %></span>
   </p>
 <%  end -%>
 
-<p class="info">en caso afirmativo... ¿hace cuánto se produjo la última?</p>
+<p class="info"><%=  t(:cuando_reformas, :scope => [:encuesta, :vivienda]) %></p>
 <% Profile::VIVIENDA_REFORMA_ULTIMA.each do |option| %>
   <p><%= f.radio_answer :vivienda_reforma_ultima, option, :vivienda %></p>
 <%  end -%>

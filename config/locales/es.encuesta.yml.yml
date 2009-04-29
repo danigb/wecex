@@ -4,4 +4,59 @@ es:
     titulo: "Encuesta sobre el consumo energético de su edificio"
     ciudad:
       titulo: "Mi ciudad"
+      localidad: "Indique la localidad en la que se encuentra su vivienda:"
+    edificio:
+      titulo: "Mi edificio"
+      anyo: "Indique, si lo conoce, el año de construcción:"
+      periodo: "En caso contrario señale el periodo aproximado de construcción:"
+      tipo: "¿En qué tipo de edificio está ubicada a vivienda?"
+      plantas: "Indique el número de plantas que tiene el edificio sobre rasante (incluyendo la baja):"
+    vivienda:
+      titulo: "Mi vivienda"
+      planta: "Si su vivienda pertenece un bloque, ¿en qué planta está situada?"
+      estancias: "Número de estancias, incluyendo la cocina:"
+      aseos: "Número de cuartos de baño/aseos:"
+      tejado: "Indique la estructura del tejado:"
+      superficie: "Superficie aproximada útil:"
+      reformas: "¿se ha realizado alguna reforma de las siguientes?"
+      cuando_reformas: "en caso afirmativo... ¿hace cuánto se produjo la última?"
+    equipo:
+      titulo: "Mi equipamiento"
+      fuentes: "Señale las fuentes de energía utilizadas para su vivienda <br/>(puede señalar varias fuentes de energía para una misma instalación):"
+      agua:
+        titulo: "Agua caliente"
+        tiene: "¿Tiene agua caliente?"
+        tipo: "¿Qué dispositivo calienta el agua?"
+        solar: "¿Dispone de paneles solares para calentar agua?"
+        edad: "Edad aproximada de la instalación"
+        caldera_tipo: "En caso de que tenga caldera... ¿es individual o centralizada?"
+        caldera_deposito: "En caso de que tenga caldera... ¿tiene depósito de acumulación?"
+      calefaccion:
+        titulo: "Calefacción"
+        tiene: "¿Tiene calefacción?"
+        estancias: "¿En qué estancias tiene calefacción?"
+        tipo: "¿Qué tipo de calefacción tiene?"
+        edad: "Edad aproximada de la instalación"
+        caldera_misma: "Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?"
+        caldera_tipo: "Si no es la misma, ¿qué tipo de caldera tiene la calefacción?"
+        bomba_tipo: "Si tiene bombas de calor... ¿de qué tipo son?"
+      aire:
+        titulo: "Aire"
+        tiene: "¿Tiene aire acondicionado?"
+        estancias: "¿En qué estancias tiene aire acondicionado?"
+        tipo: "¿Es individual o centralizada para todo el bloque?"
+        edad: "Edad aproximada de la instalación:"
+        individual: "Si el aire acondicionado es individual... ¿que configuración tiene su instalación?"
+        independientes: "(en caso de equipos independientes) ¿cómo son esos equipos independientes?"
+      dispositivos:
+        titulo: "Electrodomésticos"
+        electrodomesticos: "¿Cuántos de estos dispositivos tiene en su vivienda?"
+        iluminacion: "¿Qué cantidad aproximada tiene de los siguientes sistemas de iluminación?"
+    costumbres:
+      titulo: "Mis costumbres"
+      personas: "Número de personas que habitan la vivienda:"
+      horas: "Número de horas que la vivienda está ocupada en días laborables:"
+    opinion:
+      titulo: "Mi opinion"
+      opina: "¿Quiere añadir algun detalle relevante relacionado con el consumo energético de su vivienda?"
       

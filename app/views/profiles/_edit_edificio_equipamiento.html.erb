@@ -1,7 +1,7 @@
-<h3>Mi equipamiento</h3>
+<h3><%=  t(:titulo, :scope => [:encuesta, :equipo]) %></h3>
 
-<p class="info">señale las fuentes de energía utilizadas para su vivienda<br/>
-(puede señalar varias fuentes de energía para una misma instalación):</p>
+
+<p class="info"><%=  t(:fuentes, :scope => [:encuesta, :equipo]) %></p>
 <table>
   <th>
     <td></td><% Profile::EQUIP_SERVICIOS.each do |service| %><td>
@@ -17,45 +17,46 @@
   <% end %>
 </table>
 
-<h4>Agua caliente</h4>
+<h4><%=  t(:titulo, :scope => [:encuesta, :equipo, :agua]) %></h4>
 
-<p class="info">¿tiene agua caliente?</p>
+<p class="info"><%=  t(:tiene, :scope => [:encuesta, :equipo, :agua]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_agua_caliente, option, :comun %></p>
 <% end -%>
 
-<p class="info">¿qué dispositivo calienta el agua?</p>
+<p class="info"><%=  t(:tipo, :scope => [:encuesta, :equipo, :agua]) %></p>
 <% Profile::EQUIP_AGUA_TIPO.each do |option| %>
   <p><%= f.radio_answer :equip_agua_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<p class="info">¿Dispone de paneles solares para calentar agua?</p>
+<p class="info"><%=  t(:solar, :scope => [:encuesta, :equipo, :agua]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_agua_solar, option, :comun %></p>
 <% end -%>
 
-<p class="info">Edad aproximada de la instalación</p>
+<p class="info"><%=  t(:edad, :scope => [:encuesta, :equipo, :agua]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :equip_agua_edad %></p>
 
-<p class="info">En caso de que tenga caldera... ¿es individual o centralizada?</p>
+<p class="info"><%=  t(:caldera_tipo, :scope => [:encuesta, :equipo, :agua]) %></p>
 <% Profile::EQUIP_TIPO_IC.each do |option| %>
   <p><%= f.radio_answer :equip_agua_caldera_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<p class="info">En caso de que tenga caldera... ¿tiene depósito de acumulación?</p>
+<p class="info"><%=  t(:caldera_deposito, :scope => [:encuesta, :equipo, :agua]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_agua_caldera_acumulacion, option, :comun %></p>
 <% end -%>
 
 
 
-<h4>Calefacción</h4>
-<p class="info">¿Tiene calefacción?</p>
+<h4><%=  t(:titulo, :scope => [:encuesta, :equipo, :calefaccion]) %></h4>
+
+<p class="info"><%=  t(:tiene, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion, option, :comun %></p>
 <% end -%>
 
-<p class="info">¿En qué estancias tiene calefacción?</p>
+<p class="info"><%=  t(:estancias, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <table>
   <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
   <% Profile::EQUIP_DONDE.each do |donde| %>
@@ -68,36 +69,36 @@
   <% end %>
 </table>
 
-<p class="info">¿Qué tipo de calefacción tiene?</p>
+<p class="info"><%=  t(:tipo, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <% Profile::EQUIP_AC_TIPO.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<p class="info">Edad aproximada de la instalación</p>
+<p class="info"><%=  t(:edad, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :equip_calefaccion_edad %></p>
 
-<p class="info">Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?</p>
+<p class="info"><%=  t(:caldera_misma, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion_misma, option, :comun %></p>
 <% end -%>
 
-<p class="info">Si no es la misma, ¿qué tipo de caldera tiene la calefacción?</p>
+<p class="info"><%=  t(:caldera_tipo, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <% Profile::EQUIP_TIPO_IC.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion_caldera_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<p class="info">Si tiene bombas de calor... ¿de qué tipo son? </p>
+<p class="info"><%=  t(:bomba_tipo, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <% Profile::EQUIP_BOMBA_TIPO.each do |option| %>
   <p><%= f.radio_answer :equip_calefaccion_bomba_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<h4>Aire acondicionado</h4>
-<p class="info">¿tiene aire acondicionado?</p>
+<h4><%=  t(:titulo, :scope => [:encuesta, :equipo, :aire]) %></h4>
+<p class="info"><%=  t(:tiene, :scope => [:encuesta, :equipo, :aire]) %></p>
 <% Profile::SINO.each do |option| %>
   <p><%= f.radio_answer :equip_ac, option, :comun %></p>
 <% end -%>
 
-<p class="info">¿en qué estancias tiene aire acondicionado?</p>
+<p class="info"><%=  t(:estancias, :scope => [:encuesta, :equipo, :aire]) %></p>
 <table>
   <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
   <% Profile::EQUIP_DONDE.each do |donde| %>
@@ -110,33 +111,33 @@
   <% end %>
 </table>
 
-<p class="info">¿es individual o centralizada para todo el bloque?</p>
+<p class="info"><%=  t(:tipo, :scope => [:encuesta, :equipo, :aire]) %></p>
 <% Profile::EQUIP_TIPO_IC.each do |option| %>
   <p><%= f.radio_answer :equip_ac_tipo, option, :equipamiento %></p>
 <% end -%>
 
-<p class="info">Edad aproximada de la instalación</p>
+<p class="info"><%=  t(:edad, :scope => [:encuesta, :equipo, :aire]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :equip_ac_edad %></p>
 
-<p class="info">Si el aire acondicionado es individual... ¿que configuración tiene su instalación?</p>
-<p class="info">(en caso de equipos independientes) ¿cómo son esos equipos independientes?<p>
+<p class="info"><%=  t(:individual, :scope => [:encuesta, :equipo, :aire]) %></p>
+<p class="info"><%=  t(:independientes, :scope => [:encuesta, :equipo, :aire]) %></p>
 
 
-<h4>Electrodomésticos</h4>
-<p class="info">¿Cuántos de estos dispositivos tiene en su vivienda?</p>
+<h4><%=  t(:titulo, :scope => [:encuesta, :equipo, :dispositivos]) %></h4>
+<p class="info"><%=  t(:electrodomesticos, :scope => [:encuesta, :equipo, :dispositivos]) %></p>
 <table>
-<% Profile::EQUIP_DISPOSITIVOS.each do |disp| %>
-  <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
-  <td><%= f.text_field "equip_disp_tiene_#{disp}"  %></td></tr>
-<% end %>
+  <% Profile::EQUIP_DISPOSITIVOS.each do |disp| %>
+    <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
+    <td><%= f.text_field "equip_disp_tiene_#{disp}"  %></td></tr>
+  <% end %>
 </table>
 
-<p class="info">¿Qué cantidad aproximada tiene de los siguientes sistemas de iluminación?</p>
+<p class="info"><%=  t(:iluminacion, :scope => [:encuesta, :equipo, :dispositivos]) %></p>
 <table>
-<% Profile::EQUIP_ILUMINACION.each do |disp| %>
-  <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
-  <td><%= f.text_field "equip_ilum_tiene_#{disp}"  %></td></tr>
-<% end %>
+  <% Profile::EQUIP_ILUMINACION.each do |disp| %>
+    <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(disp, :scope => [:encuesta, :dispositivos]) %></td>
+    <td><%= f.text_field "equip_ilum_tiene_#{disp}"  %></td></tr>
+  <% end %>
 </table>
 
 
