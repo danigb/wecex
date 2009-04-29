@@ -3,18 +3,18 @@
 
 <p class="info"><%=  t(:fuentes, :scope => [:encuesta, :equipo]) %></p>
 <table>
-  <th>
+  <thead><tr>
     <td></td><% Profile::EQUIP_SERVICIOS.each do |service| %><td>
         <%= t(service, :scope => [:encuesta, :equipamiento]) %>
       </td><%  end -%>
-  </th>
+  </tr></thead><tbody>
   <% Profile::EQUIP_FUENTES.each do |source| %>
-    <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(source, :scope => [:encuesta, :equipamiento]) %><td>
+    <tr class="<%= cycle :odd, :even %> "><td class="name"><%= t(source, :scope => [:encuesta, :equipamiento]) %></td>
       <% Profile::EQUIP_SERVICIOS.each do |service| %>
         <td><%= f.check_box "equip_fuentes_#{service}_#{source}"  %></td>
       <% end %>
     </tr>
-  <% end %>
+  <% end %></tbody>
 </table>
 
 <h4><%=  t(:titulo, :scope => [:encuesta, :equipo, :agua]) %></h4>
@@ -58,7 +58,8 @@
 
 <p class="info"><%=  t(:estancias, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
 <table>
-  <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
+  <thead><tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr></thead>
+  <tbody>
   <% Profile::EQUIP_DONDE.each do |donde| %>
     <tr class="<%= cycle :odd, :even %> ">
       <td class="name"><%= t(donde, :scope => [:encuesta, :equipamiento]) %></td>
@@ -67,6 +68,7 @@
       <% end -%>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <p class="info"><%=  t(:tipo, :scope => [:encuesta, :equipo, :calefaccion]) %></p>
@@ -100,7 +102,7 @@
 
 <p class="info"><%=  t(:estancias, :scope => [:encuesta, :equipo, :aire]) %></p>
 <table>
-  <tr><td/><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
+  <tr><td>&nbsp;</td><% Profile::TAN.each do |option| %><td><%= t(option, :scope => [:encuesta, :comun]) %></td><%  end -%></tr>
   <% Profile::EQUIP_DONDE.each do |donde| %>
     <tr class="<%= cycle :odd, :even %> ">
       <td class="name"><%= t(donde, :scope => [:encuesta, :equipamiento]) %></td>

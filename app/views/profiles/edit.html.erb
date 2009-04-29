@@ -7,17 +7,18 @@
     <h3><%=  t(:titulo, :scope => [:encuesta, :ciudad]) %></h3>
     <p class="info"><%=  t(:localidad, :scope => [:encuesta, :ciudad]) %></p>
     <p>
-      <%= f.label '' %>
+      <label>&nbsp;</label>
       <%= select :profile, :provincia_id, Provincia.all.collect {|p| [ p.name, p.id ] }  %>
     </p>
     <p>
-      <%= f.label '' %>
+      <label>&nbsp;</label>
       <%= select :profile, :municipio_id, [] %>
     </p>
 
+
     <%= render :partial => 'edit_edificio_vivienda', :locals => {:f => f} %>
     <%= render :partial => 'edit_edificio_equipamiento', :locals => {:f => f} %>
-  
+
 
     <br/>
     <h3>Mis costumbres</h3>
@@ -38,3 +39,7 @@
     </p>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  
+</script>
