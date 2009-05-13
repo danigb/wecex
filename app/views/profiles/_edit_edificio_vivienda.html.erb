@@ -17,8 +17,12 @@
 <p class="info"><%=  t(:plantas, :scope => [:encuesta, :edificio]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_num_plantas %></p>
 
+<p class="info"><%=  t(:tejado, :scope => [:encuesta, :vivienda]) %></p>
+<% Profile::VIVIENDA_TEJADO.each do |option| %>
+  <p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
+<% end -%>
 
-    <h3><%=  t(:titulo, :scope => [:encuesta, :vivienda]) %></h3>
+<h3><%=  t(:titulo, :scope => [:encuesta, :vivienda]) %></h3>
 
 
 <p class="info"><%=  t(:planta, :scope => [:encuesta, :vivienda]) %></p>
@@ -26,19 +30,15 @@
   <p><%= f.radio_answer :vivienda_planta, planta, :vivienda %></p>
 <%  end -%>
 
+<p class="info"><%=  t(:superficie, :scope => [:encuesta, :vivienda]) %></p>
+<p><label>&nbsp;</label><%= f.text_field :vivienda_superficie %></p>
+
+
 <p class="info"><%=  t(:estancias, :scope => [:encuesta, :vivienda]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_estancias %></p>
 
 <p class="info"><%=  t(:aseos, :scope => [:encuesta, :vivienda]) %></p>
 <p><label>&nbsp;</label><%= f.text_field :vivienda_servicios %></p>
-
-<p class="info"><%=  t(:tejado, :scope => [:encuesta, :vivienda]) %></p>
-<% Profile::VIVIENDA_TEJADO.each do |option| %>
-  <p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
-<% end -%>
-
-<p class="info"><%=  t(:superficie, :scope => [:encuesta, :vivienda]) %></p>
-<p><label>&nbsp;</label><%= f.text_field :vivienda_superficie %></p>
 
 <p class="info"><%=  t(:reformas, :scope => [:encuesta, :vivienda]) %></p>
 <% Profile::VIVIENDA_REFORMAS.each do |reforma| %>
@@ -51,3 +51,5 @@
 <% Profile::VIVIENDA_REFORMA_ULTIMA.each do |option| %>
   <p><%= f.radio_answer :vivienda_reforma_ultima, option, :vivienda %></p>
 <%  end -%>
+
+

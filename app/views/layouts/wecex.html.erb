@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
     <%= stylesheet_link_tag 'wecex.css' %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <%= yield :header %>
   </head>
   <body>
     <div class="top <%= @controller.class %>" ></div>

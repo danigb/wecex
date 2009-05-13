@@ -1,3 +1,29 @@
+<% content_for :header do %>
+  <script type="text/javascript">
+
+
+    jQuery(function($) {
+      var spinner = $('#municipio_spinner');
+      spinner.hide();
+
+      $('#profile_provincia_id').change(function() {
+        spinner.show();
+        var provinciaId = $(this).val();
+        $.getJSON('/provincias/show/' + provinciaId, function(data) {
+          var list = $('#profile_municipio_id');
+          list.empty();
+          $.each(data, function(index) {
+            var m = data[index];
+            list.append('<option value="' + m.id + '">' + m.name +  '</option>');
+          });
+          spinner.hide();
+        });
+      });
+    });
+  </script>
+<% end %>
+
+
 <h1><%=  t(:titulo, :scope => [:encuesta]) %></h1>
 
 <div id="encuesta">
@@ -13,6 +39,7 @@
     <p>
       <label>&nbsp;</label>
       <%= select :profile, :municipio_id, [] %>
+      <%= image_tag 'spinner.gif', :class => 'spinner', :id => 'municipio_spinner' %>
     </p>
 
 
@@ -41,5 +68,5 @@
 </div>
 
 <script type="text/javascript">
-  
+
 </script>

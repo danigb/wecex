@@ -15,10 +15,11 @@ class Profile < ActiveRecord::Base
   EQUIP_SERVICIOS = %w(calef aire agua)
   EQUIP_FUENTES = %w(electr gasnat gasoleo gasbutprop solar madera otros)
 
-  EQUIP_AGUA_TIPO = ['termo', 'caldera', 'bomba']
+  EQUIP_CALE_TIPO = ['caldera', 'radiador', 'bomba', 'acumulad']
+  EQUIP_AGUA_TIPO = ['caldera', 'termo', 'bomba'] 
   EQUIP_TIPO_IC =['individual', 'centralizada']
-  EQUIP_DISPOSITIVOS = ['lavadora', 'lavavajillas', 'frigo', 'hornoel', 'hornonoel', 'microondas',
-    'tele', 'ordenador', 'portatil', 'secadora', 'congelador']
+  EQUIP_DISPOSITIVOS = ['lavadora', 'secadora', 'lavavajillas', 'frigo', 'congelador', 'hornoel', 'hornonoel', 'microondas',
+    'tele', 'ordenador', 'portatil' ]
   EQUIP_ILUMINACION = ['incan', 'bajocon', 'fluor']
   EQUIP_DONDE = ['salas', 'dormitorios']
   EQUIP_AC_TIPO = ['caldera', 'bomba', 'radiador', 'acumulad']

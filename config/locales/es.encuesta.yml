@@ -1,13 +1,14 @@
 
 es:
   encuesta:
-    titulo: "Encuesta sobre el consumo energético de su edificio"
+    titulo: "Datos sobre el consumo energético de su vivienda"
+    subtitulo: "Le rogamos nos conteste a los siguientes datos, aunque sea de forma aproximada"
     ciudad:
       titulo: "Mi ciudad"
-      localidad: "Indique la localidad en la que se encuentra su vivienda:"
+      localidad: "Provincia y municipio más próximo a su vivienda:"
     edificio:
       titulo: "Mi edificio"
-      anyo: "Indique, si lo conoce, el año de construcción:"
+      anyo: "Indique, si lo conoce, el año de construcción de su edificio:"
       periodo: "En caso contrario señale el periodo aproximado de construcción:"
       tipo: "¿En qué tipo de edificio está ubicada a vivienda?"
       plantas: "Indique el número de plantas que tiene el edificio sobre rasante (incluyendo la baja):"
@@ -28,7 +29,7 @@ es:
         tiene: "¿Tiene agua caliente?"
         tipo: "¿Qué dispositivo calienta el agua?"
         solar: "¿Dispone de paneles solares para calentar agua?"
-        edad: "Edad aproximada de la instalación"
+        edad: "En caso de que tenga paneles solares, indique en años la edad aproximada de la instalación:"
         caldera_tipo: "En caso de que tenga caldera... ¿es individual o centralizada?"
         caldera_deposito: "En caso de que tenga caldera... ¿tiene depósito de acumulación?"
       calefaccion:
@@ -37,7 +38,7 @@ es:
         estancias: "¿En qué estancias tiene calefacción?"
         tipo: "¿Qué tipo de calefacción tiene?"
         edad: "Edad aproximada de la instalación"
-        caldera_misma: "Si caldera tanto para agua como para calefacción... ¿utiliza la misma caldera para la calefacción y el agua caliente?"
+        caldera_misma: "Si caldera tanto para agua como para calefacción... <br/>¿utiliza la misma caldera para la calefacción y el agua caliente?"
         caldera_tipo: "Si no es la misma, ¿qué tipo de caldera tiene la calefacción?"
         bomba_tipo: "Si tiene bombas de calor... ¿de qué tipo son?"
       aire:

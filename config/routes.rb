@@ -12,6 +12,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :passwords
 
+  map.resources :provincias, :only => [:index, :show]
+
   map.about '/', :controller => 'about', :action => 'index'
   map.who '/quienes', :controller => 'about', :action => 'who'
   map.mission '/paraque', :controller => 'about', :action => 'mission'
