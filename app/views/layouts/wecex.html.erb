@@ -21,7 +21,7 @@
         <div id="navigation">
           <div class="sections">
             <% if signed_in? %>
-              <%= section t(:profile), edit_profile_path %>
+              <%= section t(:profile), edit_survey_path %>
               <%= section t(:invoices), invoices_path %>
               <%= section t(:report), report_path, :class => 'report' %>
 

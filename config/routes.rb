@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
     user.resource :confirmation
   end
 
-  map.resource :profile
+  map.resource :survey, :as => 'encuesta'
   map.resource :report
   map.resources :invoices
 

@@ -5,12 +5,12 @@
 <p><%= f.label '' %><%= f.text_field :edificio_anyo %></p>
 
 <p class="info"><%=  t(:periodo, :scope => [:encuesta, :edificio]) %></p>
-<% Profile::EDIFICIO_PERIODO.each do |periodo| %>
+<% Survey::EDIFICIO_PERIODO.each do |periodo| %>
   <p><%= f.radio_answer :edificio_periodo, periodo, :edificio %></p>
 <% end %>
 
 <p class="info"><%=  t(:tipo, :scope => [:encuesta, :edificio]) %></p>
-<% Profile::VIVIENDA_TIPO_EDIFICIO.each do |tipo| %>
+<% Survey::VIVIENDA_TIPO_EDIFICIO.each do |tipo| %>
   <p><%= f.radio_answer :vivienda_tipo_edificio, tipo, :vivienda %></p>
 <% end %>
 
@@ -18,7 +18,7 @@
 <p><label>&nbsp;</label><%= f.text_field :vivienda_num_plantas %></p>
 
 <p class="info"><%=  t(:tejado, :scope => [:encuesta, :vivienda]) %></p>
-<% Profile::VIVIENDA_TEJADO.each do |option| %>
+<% Survey::VIVIENDA_TEJADO.each do |option| %>
   <p><%= f.radio_answer :vivienda_tejado, option, :vivienda %></p>
 <% end -%>
 
@@ -26,7 +26,7 @@
 
 
 <p class="info"><%=  t(:planta, :scope => [:encuesta, :vivienda]) %></p>
-<% Profile::VIVIENDA_PLANTA.each do |planta| %>
+<% Survey::VIVIENDA_PLANTA.each do |planta| %>
   <p><%= f.radio_answer :vivienda_planta, planta, :vivienda %></p>
 <%  end -%>
 
@@ -41,14 +41,14 @@
 <p><label>&nbsp;</label><%= f.text_field :vivienda_servicios %></p>
 
 <p class="info"><%=  t(:reformas, :scope => [:encuesta, :vivienda]) %></p>
-<% Profile::VIVIENDA_REFORMAS.each do |reforma| %>
+<% Survey::VIVIENDA_REFORMAS.each do |reforma| %>
   <p><label>&nbsp;</label><%= f.check_box "vivienda_#{reforma}" %>
     <span><%= t("reforma_#{reforma}", :scope => [:encuesta, :vivienda]) %></span>
   </p>
 <%  end -%>
 
 <p class="info"><%=  t(:cuando_reformas, :scope => [:encuesta, :vivienda]) %></p>
-<% Profile::VIVIENDA_REFORMA_ULTIMA.each do |option| %>
+<% Survey::VIVIENDA_REFORMA_ULTIMA.each do |option| %>
   <p><%= f.radio_answer :vivienda_reforma_ultima, option, :vivienda %></p>
 <%  end -%>
 

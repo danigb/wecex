@@ -1,7 +1,5 @@
 <% content_for :header do %>
   <script type="text/javascript">
-
-
     jQuery(function($) {
       var spinner = $('#municipio_spinner');
       spinner.hide();
@@ -27,18 +25,23 @@
 <h1><%=  t(:titulo, :scope => [:encuesta]) %></h1>
 
 <div id="encuesta">
-  <% form_for(@profile, :url => profile_path) do |f| %>
+  <% form_for(@profile, :url => survey_path) do |f| %>
     <%= f.error_messages %>
+
+    <p class="info"><%= t(:subtitulo, :scope => [:encuesta]) %></p>
+    <p class="save">
+      <%= f.submit 'Guardar' %> Pulse "Guardar" cuando complete el cuestionario.
+    </p>
 
     <h3><%=  t(:titulo, :scope => [:encuesta, :ciudad]) %></h3>
     <p class="info"><%=  t(:localidad, :scope => [:encuesta, :ciudad]) %></p>
     <p>
       <label>&nbsp;</label>
-      <%= select :profile, :provincia_id, Provincia.all.collect {|p| [ p.name, p.id ] }  %>
+      <%= select :profile, :provincia_id, @provincias_select  %>
     </p>
     <p>
       <label>&nbsp;</label>
-      <%= select :profile, :municipio_id, [] %>
+      <%= select :profile, :municipio_id, @municipios_select %>
       <%= image_tag 'spinner.gif', :class => 'spinner', :id => 'municipio_spinner' %>
     </p>
 
@@ -60,9 +63,8 @@
     <p class="info"><%=  t(:opina, :scope => [:encuesta, :opinion]) %></p>
     <p><label>&nbsp;</label><%= f.text_area :opinion %></p>
     <br/>
-    <p>
-      <label>&nbsp;</label>
-      <%= f.submit 'Guardar' %>
+    <p class="save">
+      <%= f.submit 'Guardar' %> Pulse "Guardar" cuando complete el cuestionario.
     </p>
   <% end %>
 </div>

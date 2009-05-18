@@ -25,9 +25,11 @@ es:
     edificio:
       antes1950: "Antes de 1950"
       de1951a1960: "Entre 1951 y 1960"
-      de1961a1970: "Entre 1951 y 1960"
-      de1971a1980: "Entre 1951 y 1960"
-      despues1981: "Posterior a 1981"
+      de1961a1970: "Entre 1961 y 1970"
+      de1971a1980: "Entre 1971 y 1980"
+      de1981a1990: "Entre 1981 y 1990"
+      de1991a2000: "Entre 1991 y 2000"
+      post2000: "Posterior al 2000"
     vivienda:
        bloque: "Vivienda en un bloque"
        aislado: "Vivienda unifamiliar aislada"

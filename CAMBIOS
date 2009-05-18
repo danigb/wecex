@@ -3,11 +3,10 @@
 
 * Encuesta
   * Mi edificio
-    * Eliminar el año de construcción y añadir 2 bandas (del 81-20 y del 2000 en adelante)
     * - QUITAR? - Otra pregunta: A su juicio su vivienda es soleada? Recibe sol directo? - Cree que su edificio está suficientemente bien aislado.
   * Mi vivienda
     * Superficie aproximada, mover - HECHO
-   * Mover tejado-vivienda a tejado-ificio - PARCIALMENTE HECHO
+   * Mover tejado-vivienda a tejado-ificio - HECHO
   * Mi equipamiento
 
 EN GENERAL PARA TODOS: tipo de XXXX - individual, centralizado, no tengo (para agua, calefacción y ac)
